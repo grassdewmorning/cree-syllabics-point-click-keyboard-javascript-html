@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Cree Syllabics Point and Click Keyboard</title>
 </head>
 
 <body>
@@ -405,7 +405,21 @@
         };
 
 
+        let addNaFunction = addSomeCharacterFunction("\u14C7");
+        let naButton = document.getElementById("canadianSyllabicsNaButton");
+        naButton.addEventListener("click", addNaFunction);
 
+        let addNeFunction = addSomeCharacterFunction("\u14C0");
+        let neButton = document.getElementById("canadianSyllabicsNeButton");
+        neButton.addEventListener("click", addNeFunction);
+
+        let addNiFunction = addSomeCharacterFunction("\u14C2");
+        let niButton = document.getElementById("canadianSyllabicsNiButton");
+        niButton.addEventListener("click", addNiFunction);
+
+        let addNoFunction = addSomeCharacterFunction("\u14C4");
+        let noButton = document.getElementById("canadianSyllabicsNoButton");
+        noButton.addEventListener("click", addNoFunction);
 
         let addSaFunction = addSomeCharacterFunction("\u14F4");
         let saButton = document.getElementById("canadianSyllabicsSaButton");
