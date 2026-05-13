@@ -404,29 +404,38 @@
             textOutput.value += character;
         };
 
+
+
+
+        let addSaFunction = addSomeCharacterFunction("\u14F4");
+        let saButton = document.getElementById("canadianSyllabicsSaButton");
+        saButton.addEventListener("click", addSaFunction);
+
+        let addSeFunction = addSomeCharacterFunction("\u14ED");
+        let seButton = document.getElementById("canadianSyllabicsSeButton");
+        seButton.addEventListener("click", addSeFunction);
+
+        let addSiFunction = addSomeCharacterFunction("\u14EF");
+        let siButton = document.getElementById("canadianSyllabicsSiButton");
+        siButton.addEventListener("click", addSiFunction);
+
+        let addSoFunction = addSomeCharacterFunction("\u14F1");
+        let soButton = document.getElementById("canadianSyllabicsSoButton");
+        soButton.addEventListener("click", addSoFunction);
+
         let addYaFunction = addSomeCharacterFunction("\u152D");
-        let addYeFunction = addSomeCharacterFunction("\u1526");
-
-        let addYiFunction = (event) => {
-            let textOutput = document.getElementById("textOutput");
-            textOutput.value += "\u1528";
-        };
-
-        let addYoFunction = (event) => {
-            let textOutput = document.getElementById("textOutput");
-            textOutput.value += "\u152A";
-        };
-
         let yaButton = document.getElementById("canadianSyllabicsYaButton");
         yaButton.addEventListener("click", addYaFunction);
 
+        let addYeFunction = addSomeCharacterFunction("\u1526");
         let yeButton = document.getElementById("canadianSyllabicsYeButton");
         yeButton.addEventListener("click", addYeFunction);
 
+        let addYiFunction = addSomeCharacterFunction("\u1528");
         let yiButton = document.getElementById("canadianSyllabicsYiButton");
         yiButton.addEventListener("click", addYiFunction);
 
-
+        let addYoFunction = addSomeCharacterFunction("\u152A");
         let yoButton = document.getElementById("canadianSyllabicsYoButton");
         yoButton.addEventListener("click", addYoFunction);
     </script>
