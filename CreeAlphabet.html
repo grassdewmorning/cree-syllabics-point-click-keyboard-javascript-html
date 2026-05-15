@@ -61,6 +61,14 @@
                 </td>
                 <td><button id="canadianSyllabicsPoButton">ᐳ CANADIAN SYLLABICS PO (U+1433)</button>
                 </td>
+                <td><button id="canadianSyllabicsPiiButton">ᐲ CANADIAN SYLLABICS PII (U+1432)</button>
+                </td>
+                <td><button id="canadianSyllabicsPooButton">ᐴ CANADIAN SYLLABICS POO (U+1434)</button>
+                </td>
+                <td><button id="canadianSyllabicsPaaButton">ᐹ CANADIAN SYLLABICS PAA (U+1439)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreePButton">ᑊ CANADIAN SYLLABICS WEST-CREE P (U+144A)</button>
+                </td>
             </tr>
             <tr>
                 <th>t
@@ -225,7 +233,21 @@ The following are missing:
         let poButton = document.getElementById("canadianSyllabicsPoButton");
         poButton.addEventListener("click", addPoFunction);
 
+        let addPiiFunction = addSomeCharacterFunction("\u1432");
+        let piiButton = document.getElementById("canadianSyllabicsPiiButton");
+        piiButton.addEventListener("click", addPiiFunction);
 
+        let addPooFunction = addSomeCharacterFunction("\u1434");
+        let pooButton = document.getElementById("canadianSyllabicsPooButton");
+        pooButton.addEventListener("click", addPooFunction);
+
+        let addPaaFunction = addSomeCharacterFunction("\u1439");
+        let paaButton = document.getElementById("canadianSyllabicsPaaButton");
+        paaButton.addEventListener("click", addPaaFunction);
+
+        let addWestCreePFunction = addSomeCharacterFunction("\u144A");
+        let westCreePButton = document.getElementById("canadianSyllabicsWestCreePButton");
+        westCreePButton.addEventListener("click", addWestCreePFunction);
 
 
 
