@@ -25,6 +25,12 @@
                 </th>
                 <th>o
                 </th>
+                <th>ii
+                </th>
+                <th>oo
+                </th>
+                <th>aa
+                </th>
             </tr>
             <tr>
                 <th>-
@@ -36,6 +42,12 @@
                 <td><button id="canadianSyllabicsIButton">ᐃ CANADIAN SYLLABICS I (U+1403)</button>
                 </td>
                 <td><button id="canadianSyllabicsOButton">ᐅ CANADIAN SYLLABICS O (U+1405)</button>
+                </td>
+                <td><button id="canadianSyllabicsIiButton">ᐄ CANADIAN SYLLABICS II (U+1404)</button>
+                </td>
+                <td><button id="canadianSyllabicsOoButton">ᐆ CANADIAN SYLLABICS OO (U+1406)</button>
+                </td>
+                <td><button id="canadianSyllabicsAaButton">ᐋ CANADIAN SYLLABICS AA (U+140B)</button>
                 </td>
             </tr>
             <tr>
@@ -146,6 +158,27 @@
         };
 
 
+        /*
+
+The following are missing:
+ᐍ | ᐏ | ᐓ | ᐘ | ᐑ | ᐕ | ᐚ | ᐤ
+
+ᐲ | ᐴ | ᐹ | ᑊ
+ᑏ | ᑑ | ᑖ | ᐟ
+ᑮ | ᑰ | ᑳ | ᐠ
+ᒌ | ᒎ | ᒑ | ᐨ
+ᒦ | ᒨ | ᒫ | ᒼ
+ᓃ | ᓅ | ᓈ | ᐣ
+ᓰ | ᓲ | ᓵ | ᐢ
+ᖧ | ᖨ | ᖪ | ᖬ | ᖩ | ᖫ | ᖭ | ‡
+ᔩ | ᔫ | ᔮ | ᐩ (ᐝ)
+ᓬ
+ᕒ
+ᐦ
+ᕽ
+
+        */
+
 
         let addAFunction = addSomeCharacterFunction("\u140A");
         let aButton = document.getElementById("canadianSyllabicsAButton");
@@ -163,6 +196,17 @@
         let oButton = document.getElementById("canadianSyllabicsOButton");
         oButton.addEventListener("click", addOFunction);
 
+        let addIiFunction = addSomeCharacterFunction("\u1404");
+        let iiButton = document.getElementById("canadianSyllabicsIiButton");
+        iiButton.addEventListener("click", addIiFunction);
+
+        let addOoFunction = addSomeCharacterFunction("\u1406");
+        let ooButton = document.getElementById("canadianSyllabicsOoButton");
+        ooButton.addEventListener("click", addOoFunction);
+
+        let addAaFunction = addSomeCharacterFunction("\u140B");
+        let aaButton = document.getElementById("canadianSyllabicsAaButton");
+        aaButton.addEventListener("click", addAaFunction);
 
 
         let addPaFunction = addSomeCharacterFunction("\u1438");
