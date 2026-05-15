@@ -51,6 +51,28 @@
                 </td>
             </tr>
             <tr>
+                <th>w
+                </th>
+                <td><button id="canadianSyllabicsWestCreeWaButton">ᐘ CANADIAN SYLLABICS WEST-CREE WA (U+1418)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreeWeButton">ᐍ CANADIAN SYLLABICS WEST-CREE WE (U+140D)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreeWiButton">ᐏ CANADIAN SYLLABICS WEST-CREE WI (U+140F)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreeWoButton">ᐓ CANADIAN SYLLABICS WEST-CREE WO (U+1413)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreeWiiButton">ᐑ CANADIAN SYLLABICS WEST-CREE WII (U+1411)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreeWooButton">ᐕ CANADIAN SYLLABICS WEST-CREE WOO (U+1415)</button>
+                </td>
+                <td><button id="canadianSyllabicsWestCreeWaaButton">ᐚ CANADIAN SYLLABICS WEST-CREE WAA (U+141A)</button>
+                </td>
+                <td><button id="canadianSyllabicsFinalRingButton">ᐤ CANADIAN SYLLABICS FINAL RING (U+1424)</button>
+                </td>    	
+            </tr>
+
+
+            <tr>
                 <th>p
                 </th>
                 <td><button id="canadianSyllabicsPaButton">ᐸ CANADIAN SYLLABICS PA (U+1438)</button>
@@ -169,9 +191,6 @@
         /*
 
 The following are missing:
-ᐍ | ᐏ | ᐓ | ᐘ | ᐑ | ᐕ | ᐚ | ᐤ
-
-ᐲ | ᐴ | ᐹ | ᑊ
 ᑏ | ᑑ | ᑖ | ᐟ
 ᑮ | ᑰ | ᑳ | ᐠ
 ᒌ | ᒎ | ᒑ | ᐨ
@@ -216,6 +235,41 @@ The following are missing:
         let aaButton = document.getElementById("canadianSyllabicsAaButton");
         aaButton.addEventListener("click", addAaFunction);
 
+
+
+        let addWaFunction = addSomeCharacterFunction("\u1418");
+        let waButton = document.getElementById("canadianSyllabicsWestCreeWaButton");
+        waButton.addEventListener("click", addWaFunction);
+
+        let addWeFunction = addSomeCharacterFunction("\u140D");
+        let weButton = document.getElementById("canadianSyllabicsWestCreeWeButton");
+        weButton.addEventListener("click", addWeFunction);
+
+        let addWiFunction = addSomeCharacterFunction("\u140F");
+        let wiButton = document.getElementById("canadianSyllabicsWestCreeWiButton");
+        wiButton.addEventListener("click", addWiFunction);
+
+        let addWoFunction = addSomeCharacterFunction("\u1413");
+        let woButton = document.getElementById("canadianSyllabicsWestCreeWoButton");
+        woButton.addEventListener("click", addWoFunction);
+
+        let addWiiFunction = addSomeCharacterFunction("\u1411");
+        let wiiButton = document.getElementById("canadianSyllabicsWestCreeWiiButton");
+        wiiButton.addEventListener("click", addWiiFunction);
+
+        let addWooFunction = addSomeCharacterFunction("\u1415");
+        let wooButton = document.getElementById("canadianSyllabicsWestCreeWooButton");
+        wooButton.addEventListener("click", addWooFunction);
+
+        let addWaaFunction = addSomeCharacterFunction("\u141A");
+        let waaButton = document.getElementById("canadianSyllabicsWestCreeWaaButton");
+        waaButton.addEventListener("click", addWaaFunction);
+
+        let addFinalRingFunction = addSomeCharacterFunction("\u1424");
+        let finalRingButton = document.getElementById("canadianSyllabicsFinalRingButton");
+        finalRingButton.addEventListener("click", addFinalRingFunction);
+
+    
 
         let addPaFunction = addSomeCharacterFunction("\u1438");
         let paButton = document.getElementById("canadianSyllabicsPaButton");
