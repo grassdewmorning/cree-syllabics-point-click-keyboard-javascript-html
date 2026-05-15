@@ -10,7 +10,7 @@
 
     <h1>Cree Syllabics Point-and-Click Keyboards</h1>
 
-    <input type="text" id="textOutput" name="textOutput" value=""/>
+    <input type="text" id="textOutput" name="textOutput" value="" />
 
     <table>
         <tbody>
@@ -68,7 +68,7 @@
                 <td><button id="canadianSyllabicsWestCreeWaaButton">ᐚ CANADIAN SYLLABICS WEST-CREE WAA (U+141A)</button>
                 </td>
                 <td><button id="canadianSyllabicsFinalRingButton">ᐤ CANADIAN SYLLABICS FINAL RING (U+1424)</button>
-                </td>    	
+                </td>
             </tr>
 
 
@@ -181,11 +181,11 @@
 
 
     <script>
-        let addSomeCharacterFunction = (character) => 
-        (event) => {
-            let textOutput = document.getElementById("textOutput");
-            textOutput.value += character;
-        };
+        let addSomeCharacterFunction = (character) =>
+            (event) => {
+                let textOutput = document.getElementById("textOutput");
+                textOutput.value += character;
+            };
 
 
         /*
@@ -269,7 +269,7 @@ The following are missing:
         let finalRingButton = document.getElementById("canadianSyllabicsFinalRingButton");
         finalRingButton.addEventListener("click", addFinalRingFunction);
 
-    
+
 
         let addPaFunction = addSomeCharacterFunction("\u1438");
         let paButton = document.getElementById("canadianSyllabicsPaButton");
