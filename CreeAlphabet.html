@@ -105,6 +105,12 @@
                 </td>
                 <td><button id="canadianSyllabicsTaButton">ᑕ CANADIAN SYLLABICS TA (U+1455)</button>
                 </td>
+                <td><button id="canadianSyllabicsTiiButton">ᑏ CANADIAN SYLLABICS TII (U+144F)</button>
+                </td>
+                <td><button id="canadianSyllabicsTooButton">ᑑ CANADIAN SYLLABICS TOO (U+1451)</button>
+                </td>
+                <td><button id="canadianSyllabicsTaaButton">ᑖ CANADIAN SYLLABICS TAA (U+1456)</button>
+                </td>
             </tr>
             <tr>
                 <th>k
@@ -323,6 +329,17 @@ The following are missing:
         let toButton = document.getElementById("canadianSyllabicsToButton");
         toButton.addEventListener("click", addToFunction);
 
+        let addTiiFunction = addSomeCharacterFunction("\u144F");
+        let tiiButton = document.getElementById("canadianSyllabicsTiiButton");
+        tiiButton.addEventListener("click", addTiiFunction);
+
+        let addTooFunction = addSomeCharacterFunction("\u1451");
+        let tooButton = document.getElementById("canadianSyllabicsTooButton");
+        tooButton.addEventListener("click", addTooFunction);
+        
+        let addTaaFunction = addSomeCharacterFunction("\u1456");
+        let taaButton = document.getElementById("canadianSyllabicsTaaButton");
+        taaButton.addEventListener("click", addTaaFunction);
 
 
 
