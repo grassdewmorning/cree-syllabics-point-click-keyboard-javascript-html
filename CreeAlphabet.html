@@ -270,6 +270,15 @@
                 <td><button id="canadianSyllabicsHkButton">ᕽ CANADIAN SYLLABICS HK (U+157D)</button>
                 </td>
             </tr>
+            <tr>
+                <th>whitespace
+                </th>
+                <td><button id="spaceButton">( ) SPACE (U+0020)</button>
+                </td>
+                <td><button id="carriageReturnLineFeedButton">(New Line) CARRIAGE RETURN (U+000D) LINE FEED (U+000A)</button>
+                </td>
+            </tr>
+
         </tbody>
     </table>
 
@@ -694,7 +703,15 @@
         let hkButton = document.getElementById("canadianSyllabicsHkButton");
         hkButton.addEventListener("click", addHkFunction);
 
+        let addSpaceFunction = addSomeCharacterFunction("\u0020");
+        let spaceButton = document.getElementById("spaceButton");
+        spaceButton.addEventListener("click", addSpaceFunction);
         
+
+        let carriageReturnLineFeedFunction = addSomeCharacterFunction("\u000D\u000A");
+        let carriageReturnLineFeedButton = document.getElementById("carriageReturnLineFeedButton");
+        carriageReturnLineFeedButton.addEventListener("click", carriageReturnLineFeedFunction);
+
 
     </script>
 </body>
