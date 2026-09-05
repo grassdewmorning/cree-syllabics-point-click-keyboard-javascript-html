@@ -253,7 +253,9 @@
                 </td>
                 <td><button id="canadianSyllabicsYaaButton">ᔮ CANADIAN SYLLABICS YAA (U+152E)</button>
                 </td>
-                <td><button id="canadianSyllabicsFinalPlusButton">ᐩ CANADIAN SYLLABICS FINAL PLUS (U+1429) (ᐝ CANADIAN SYLLABICS Y-CREE W (U+141D))</button>
+                <td><button id="canadianSyllabicsFinalPlusButton">ᐩ CANADIAN SYLLABICS FINAL PLUS (U+1429)</button>
+                </td>
+                <td><button id="canadianSyllabicsYCreeWButton">ᐝ CANADIAN SYLLABICS Y-CREE W (U+141D)</button>
                 </td>
             </tr>
             <tr>
@@ -669,6 +671,9 @@
         let finalPlusButton = document.getElementById("canadianSyllabicsFinalPlusButton");
         finalPlusButton.addEventListener("click", addFinalPlusFunction);
         
+        let addYCreeWFunction = addSomeCharacterFunction("\u141D");
+        let yCreeWButton = document.getElementById("canadianSyllabicsYCreeWButton");
+        yCreeWButton.addEventListener("click", addYCreeWFunction);
         
 
 
