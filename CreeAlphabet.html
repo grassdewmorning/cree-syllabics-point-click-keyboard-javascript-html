@@ -637,7 +637,7 @@
         const CANADIAN_SYLLABICS_WEST_CREE_P = "\u144A";
 
     const CANADIAN_SYLLABICS_TE = "\u144C";
-	const CANADIAN_SYLLABICS_TI = "\u144E";
+	  const CANADIAN_SYLLABICS_TI = "\u144E";
     const CANADIAN_SYLLABICS_TO = "\u1450";
     const CANADIAN_SYLLABICS_TA = "\u1455";
     const CANADIAN_SYLLABICS_TII = "\u144F";
@@ -1155,6 +1155,16 @@
                     if (rotatedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
                     }
+                } if (isPSyllable(lastChar)) {
+                    let rotatedChar = rotateRightPSyllable(lastChar);
+                    if (rotatedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
+                    }
+                } if (isTSyllable(lastChar)) {
+                    let rotatedChar = rotateRightTSyllable(lastChar);
+                    if (rotatedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
+                    }
                 }
                 else {
                     console.log("cannot rotate the last character");
@@ -1212,7 +1222,18 @@
                     if (lengthenedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
                     }
+                } if (isPSyllable(lastChar)) {
+                    let lengthenedChar = lengthenPSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
+                } if (isTSyllable(lastChar)) {
+                    let lengthenedChar = lengthenTSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
                 }
+
                 else {
                     console.log("cannot lengthen the last character");
                 }
@@ -1293,6 +1314,43 @@
               || currentChar === CANADIAN_SYLLABICS_WEST_CREE_P;
         }
 
+        function rotateRightPSyllable(currentChar) {
+            // syllables with short vowel:
+            if (currentChar === CANADIAN_SYLLABICS_PE) {
+                return CANADIAN_SYLLABICS_PA;
+            } else if (currentChar === CANADIAN_SYLLABICS_PA) {
+                return CANADIAN_SYLLABICS_PI;
+            } else if (currentChar === CANADIAN_SYLLABICS_PI) {
+                return CANADIAN_SYLLABICS_PO;
+            } else if (currentChar === CANADIAN_SYLLABICS_PO) {
+                return CANADIAN_SYLLABICS_PE;
+            // syllables with long vowel:
+            } else if (currentChar === CANADIAN_SYLLABICS_PAA) {
+                return CANADIAN_SYLLABICS_PII;
+            } else if (currentChar === CANADIAN_SYLLABICS_PII) {
+                return CANADIAN_SYLLABICS_POO;
+            } else if (currentChar === CANADIAN_SYLLABICS_POO) {
+                return CANADIAN_SYLLABICS_PAA;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+
+        function lengthenPSyllable(currentChar) {
+            if (currentChar === CANADIAN_SYLLABICS_PE) {
+                return CANADIAN_SYLLABICS_PE;
+            } else if (currentChar === CANADIAN_SYLLABICS_PA) {
+                return CANADIAN_SYLLABICS_PAA;
+            } else if (currentChar === CANADIAN_SYLLABICS_PI) {
+                return CANADIAN_SYLLABICS_PII;
+            } else if (currentChar === CANADIAN_SYLLABICS_PO) {
+                return CANADIAN_SYLLABICS_POO;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
         function isTSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_TE
               || currentChar === CANADIAN_SYLLABICS_TI
@@ -1302,6 +1360,44 @@
               || currentChar === CANADIAN_SYLLABICS_TOO
               || currentChar === CANADIAN_SYLLABICS_TAA
               || currentChar === CANADIAN_SYLLABICS_FINAL_ACUTE;
+        }
+
+
+        function rotateRightTSyllable(currentChar) {
+            // syllables with short vowel:
+            if (currentChar === CANADIAN_SYLLABICS_TE) {
+                return CANADIAN_SYLLABICS_TA;
+            } else if (currentChar === CANADIAN_SYLLABICS_TA) {
+                return CANADIAN_SYLLABICS_TI;
+            } else if (currentChar === CANADIAN_SYLLABICS_TI) {
+                return CANADIAN_SYLLABICS_TO;
+            } else if (currentChar === CANADIAN_SYLLABICS_TO) {
+                return CANADIAN_SYLLABICS_TE;
+            // syllables with long vowel:
+            } else if (currentChar === CANADIAN_SYLLABICS_TAA) {
+                return CANADIAN_SYLLABICS_TII;
+            } else if (currentChar === CANADIAN_SYLLABICS_TII) {
+                return CANADIAN_SYLLABICS_TOO;
+            } else if (currentChar === CANADIAN_SYLLABICS_TOO) {
+                return CANADIAN_SYLLABICS_TAA;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+
+        function lengthenTSyllable(currentChar) {
+            if (currentChar === CANADIAN_SYLLABICS_TE) {
+                return CANADIAN_SYLLABICS_TE;
+            } else if (currentChar === CANADIAN_SYLLABICS_TA) {
+                return CANADIAN_SYLLABICS_TAA;
+            } else if (currentChar === CANADIAN_SYLLABICS_TI) {
+                return CANADIAN_SYLLABICS_TII;
+            } else if (currentChar === CANADIAN_SYLLABICS_TO) {
+                return CANADIAN_SYLLABICS_TOO;
+            } else {
+                console.log("not a recognized character for this function");
+            }
         }
 
         function isKSyllable(currentChar) {
