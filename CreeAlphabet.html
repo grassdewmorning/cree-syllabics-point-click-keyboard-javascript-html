@@ -6,10 +6,24 @@
     <title>Cree Syllabics Point-and-Click Keyboard</title>
     <style>
         .buttonDebugText {
-            visibility: collapse;
+            display: none;
+ 
         }
         .friendlyRomanization {
             visibility: visible;
+        }
+        
+        button {
+            display: inline-block;
+            padding: 0.34em;
+            margin: 0.2em;
+            font-size: 2em;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .complexAction {
+            width: auto;
         }
     </style>
 </head>
@@ -24,8 +38,8 @@
 
     <textarea id="textOutput" name="textOutput" dir="ltr" rows="3" style="width:90%"> </textarea>
 
-    <button id="rotateRightButton">ROTATE CHARACTER RIGHT</button>
-    <button id="lengthenVowelButton">LENGTHEN VOWEL</button>
+    <button id="rotateRightButton" class="complexAction">Rotate Last Character Rightward</button>
+    <button id="lengthenVowelButton" class="complexAction">Lengthen Vowel of Last Character</button>
 
 
     <table>
@@ -456,6 +470,11 @@
                     </button>
                 </td>
             </tr>
+        </tbody>
+    </table>
+        
+    <table>
+        <tbody>
             <tr>
                 <th>non-syllabic
                 </th>
@@ -476,6 +495,10 @@
                     </button>
                 </td>
             </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
             <tr>
                 <th>whitespace
                 </th>
