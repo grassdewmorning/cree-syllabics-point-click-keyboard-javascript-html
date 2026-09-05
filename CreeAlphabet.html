@@ -111,7 +111,7 @@
                 </td>
                 <td><button id="canadianSyllabicsTaaButton">ᑖ CANADIAN SYLLABICS TAA (U+1456)</button>
                 </td>
-                <td><button id="canadianSyllabicsWestCreeTButton">ᐟ</button>
+                <td><button id="canadianSyllabicsFinalAcuteButton">ᐟ CANADIAN SYLLABICS FINAL ACUTE BUTTON (U+141F)</button>
                 </td>
             </tr>
             <tr>
@@ -425,6 +425,12 @@ The following are missing:
         let addTaaFunction = addSomeCharacterFunction("\u1456");
         let taaButton = document.getElementById("canadianSyllabicsTaaButton");
         taaButton.addEventListener("click", addTaaFunction);
+        
+        // CANADIAN SYLLABICS FINAL ACUTE (U+141F)
+        let addFinalAcuteFunction = addSomeCharacterFunction("\u141F");
+        let finalAcuteButton = document.getElementById("canadianSyllabicsFinalAcuteButton");
+        finalAcuteButton.addEventListener("click", addFinalAcuteFunction);
+
 
 
 
