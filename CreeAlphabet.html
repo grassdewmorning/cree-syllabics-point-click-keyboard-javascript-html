@@ -125,15 +125,14 @@
                 </td>
                 <td><button id="canadianSyllabicsKaButton">ᑲ CANADIAN SYLLABICS KA (U+1472)</button>
                 </td>
-                <td><button id="canadianSyllabics803">ᑮ</button>
+                <td><button id="canadianSyllabicsKiiButton">ᑮ CANADIAN SYLLABICS KII (U+146E)</button>
                 </td>
-                <td><button id="canadianSyllabics802">ᑰ</button>
+                <td><button id="canadianSyllabicsKooButton">ᑰ CANADIAN SYLLABICS KOO (U+1470)</button>
                 </td>
-                <td><button id="canadianSyllabics801">ᑳ</button>
+                <td><button id="canadianSyllabicsKaaButton">ᑳ CANADIAN SYLLABICS KAA (U+1473)</button>
                 </td>
-                <td><button id="canadianSyllabics800">ᐠ</button>
+                <td><button id="canadianSyllabicsFinalGraveButton">ᐠ CANADIAN SYLLABICS FINAL GRAVE (U+1420)</button>
                 </td>
-
             </tr>
             <tr>
                 <th>ch
@@ -166,11 +165,11 @@
                 </td>
                 <td><button id="canadianSyllabicsMaButton">ᒪ CANADIAN SYLLABICS MA (U+14AA)</button>
                 </td>
-                <td><button id="canadianSyllabics808">ᒦ CANADIAN SYLLABICS MII (U+14A6)</button>
+                <td><button id="canadianSyllabicsMiiButton">ᒦ CANADIAN SYLLABICS MII (U+14A6)</button>
                 </td>
-                <td><button id="canadianSyllabics809">ᒨ CANADIAN SYLLABICS MOO (U+14A8)</button>
+                <td><button id="canadianSyllabicsMooButton">ᒨ CANADIAN SYLLABICS MOO (U+14A8)</button>
                 </td>
-                <td><button id="canadianSyllabics810">ᒫ CANADIAN SYLLABICS MAA (U+14AB)</button>
+                <td><button id="canadianSyllabicsMaaButton">ᒫ CANADIAN SYLLABICS MAA (U+14AB)</button>
                 </td>
                 <td><button id="canadianSyllabics811">ᒼ</button>
                 </td>
@@ -219,13 +218,13 @@
             <tr>
                 <th>th
                 </th>
-                <td><button id="canadianSyllabicsTheButton">ᖧ CANADIAN SYLLABICS YE (U+1526)</button>
+                <td><button id="canadianSyllabicsThCreeTheButton">ᖧ CANADIAN SYLLABICS TH-CREE THE (U+15A7)</button>
                 </td>
-                <td><button id="canadianSyllabicsThiButton">ᖨ CANADIAN SYLLABICS THI (U+)</button>
+                <td><button id="canadianSyllabicsThCreeThiButton">ᖨ CANADIAN SYLLABICS TH-CREE THI (U+15A8)</button>
                 </td>
-                <td><button id="canadianSyllabicsThoButton">ᖪ CANADIAN SYLLABICS THO (U+)</button>
+                <td><button id="canadianSyllabicsThCreeThoButton">ᖪ CANADIAN SYLLABICS TH-CREE THO (U+15AA)</button>
                 </td>
-                <td><button id="canadianSyllabicsThaButton">ᖬ CANADIAN SYLLABICS THA (U+)</button>
+                <td><button id="canadianSyllabicsThCreeThaButton">ᖬ CANADIAN SYLLABICS TH-CREE THA (U+15AC)</button>
                 </td>
                 <td><button id="canadianSyllabics830">ᖩ</button>
                 </td>
@@ -449,6 +448,29 @@ The following are missing:
         let addKoFunction = addSomeCharacterFunction("\u146F");
         let koButton = document.getElementById("canadianSyllabicsKoButton");
         koButton.addEventListener("click", addKoFunction);
+
+        // CANADIAN SYLLABICS KII (U+146E)
+        let addKiiFunction = addSomeCharacterFunction("\u146E");
+        let kiiButton = document.getElementById("canadianSyllabicsKiiButton");
+        kiiButton.addEventListener("click", addKiiFunction);
+
+        // ᑰ CANADIAN SYLLABICS KOO (U+1470)
+        let addKooFunction = addSomeCharacterFunction("\u1470");
+        let kooButton = document.getElementById("canadianSyllabicsKooButton");
+        kooButton.addEventListener("click", addKooFunction);
+        
+        // ᑳ 
+        // CANADIAN SYLLABICS KAA (U+1473)
+        let addKaaFunction = addSomeCharacterFunction("\u1473");
+        let kaaButton = document.getElementById("canadianSyllabicsKaaButton");
+        kaaButton.addEventListener("click", addKaaFunction);
+        
+        
+        // ᐠ
+        // CANADIAN SYLLABICS FINAL GRAVE (U+1420)
+        let addFinalGraveFunction = addSomeCharacterFunction("\u1420");
+        let finalGraveButton = document.getElementById("canadianSyllabicsFinalGraveButton");
+        finalGraveButton.addEventListener("click", addFinalGraveFunction);
 
 
 
