@@ -292,111 +292,6 @@
                 textOutput.value += character;
             };
         
-        let rotateLastCharacterInTextField = (event) => {
-            let textOutput = document.getElementById("textOutput");
-            let textOutputInitialValue = textOutput.value;
-            if (textOutputInitialValue) {
-                let valueLength = textOutputInitialValue.length;
-                if (valueLength < 1) {
-                    return; // There is no character to rotate. Nothing to do here.
-                }
-                let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
-                if (isNonConsonantInitialSyllable(lastChar)) {
-                    let rotatedChar = rotateRightNonConsonantInitialSyllable(lastChar);
-                    if (rotatedChar) {
-                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
-                    }
-                } if (isWSyllable(lastChar)) {
-                    let rotatedChar = rotateRightWSyllable(lastChar);
-                    if (rotatedChar) {
-                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
-                    }
-                }
-                else {
-                    console.log("cannot rotate the last character");
-                }
-            }
-        }
-        
-        function isNonConsonantInitialSyllable(currentChar) {
-            return currentChar === "\u1401"
-              || currentChar === "\u1403"
-              || currentChar === "\u1405"
-              || currentChar === "\u140A"
-              || currentChar === "\u1404"
-              || currentChar === "\u1406"
-              || currentChar === "\u140B";
-        }
-
-        function rotateRightNonConsonantInitialSyllable(currentChar) {
-            if (currentChar === "\u1401") {
-                return "\u140A";
-            } else if (currentChar === "\u140A") {
-                return "\u1403";
-            } else if (currentChar === "\u1403") {
-                return "\u1405";
-            } else if (currentChar === "\u1405") {
-                return "\u1401";
-            } else {
-                console.log("not a recognized character for this function");
-            }
-        }
-
-        function lengthenNonConsonantInitialSyllable(currentChar) {
-            if (currentChar === "\u1401") {
-                return "\u1401";
-            } else if (currentChar === "\u140A") {
-                return "\u140B";
-            } else if (currentChar === "\u1403") {
-                return "\u1404";
-            } else if (currentChar === "\u1405") {
-                return "\u1406";
-            } else {
-                console.log("not a recognized character for this function");
-            }
-        }
-
-
-        function isWSyllable(currentChar) {
-            return currentChar === "\u140D"
-              || currentChar === "\u140F"
-              || currentChar === "\u1413"
-              || currentChar === "\u1418"
-              || currentChar === "\u1411"
-              || currentChar === "\u1415"
-              || currentChar === "\u141A";
-        }
-
-        
-        function rotateRightWSyllable(currentChar) {
-            if (currentChar === "\u140D") {
-                return "\u1418";
-            } else if (currentChar === "\u1418") {
-                return "\u140F";
-            } else if (currentChar === "\u140F") {
-                return "\u1413";
-            } else if (currentChar === "\u1413") {
-                return "\u140D";
-            } else {
-                console.log("not a recognized character for this function");
-            }
-        }
-
-        function lengthenWSyllable(currentChar) {
-            if (currentChar === "\u140D") {
-                return "\u140D";
-            } else if (currentChar === "\u1418") {
-                return "\u141A";
-            } else if (currentChar === "\u140F") {
-                return "\u1411";
-            } else if (currentChar === "\u1413") {
-                return "\u1415";
-            } else {
-                console.log("not a recognized character for this function");
-            }
-        }
-
-
 
 
         let addAFunction = addSomeCharacterFunction("\u140A");
@@ -807,9 +702,137 @@
         let carriageReturnLineFeedButton = document.getElementById("carriageReturnLineFeedButton");
         carriageReturnLineFeedButton.addEventListener("click", carriageReturnLineFeedFunction);
 
+        
+        // Advanced functionality: Syllable grapheme rotation
+        
+        let rotateLastCharacterInTextField = (event) => {
+            let textOutput = document.getElementById("textOutput");
+            let textOutputInitialValue = textOutput.value;
+            if (textOutputInitialValue) {
+                let valueLength = textOutputInitialValue.length;
+                if (valueLength < 1) {
+                    return; // There is no character to rotate. Nothing to do here.
+                }
+                let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
+                if (isNonConsonantInitialSyllable(lastChar)) {
+                    let rotatedChar = rotateRightNonConsonantInitialSyllable(lastChar);
+                    if (rotatedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
+                    }
+                } if (isWSyllable(lastChar)) {
+                    let rotatedChar = rotateRightWSyllable(lastChar);
+                    if (rotatedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
+                    }
+                }
+                else {
+                    console.log("cannot rotate the last character");
+                }
+            }
+        }
+        
+        function isNonConsonantInitialSyllable(currentChar) {
+            return currentChar === "\u1401"
+              || currentChar === "\u1403"
+              || currentChar === "\u1405"
+              || currentChar === "\u140A"
+              || currentChar === "\u1404"
+              || currentChar === "\u1406"
+              || currentChar === "\u140B";
+        }
+
+        function rotateRightNonConsonantInitialSyllable(currentChar) {
+            if (currentChar === "\u1401") {
+                return "\u140A";
+            } else if (currentChar === "\u140A") {
+                return "\u1403";
+            } else if (currentChar === "\u1403") {
+                return "\u1405";
+            } else if (currentChar === "\u1405") {
+                return "\u1401";
+            } else if (currentChar === "\u140B") {
+                return "\u1404";
+            } else if (currentChar === "\u1404") {
+                return "\u1406";
+            } else if (currentChar === "\u1406") {
+                return "\u140B";
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+        function lengthenNonConsonantInitialSyllable(currentChar) {
+            if (currentChar === "\u1401") {
+                return "\u1401";
+            } else if (currentChar === "\u140A") {
+                return "\u140B";
+            } else if (currentChar === "\u1403") {
+                return "\u1404";
+            } else if (currentChar === "\u1405") {
+                return "\u1406";
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+
+        function isWSyllable(currentChar) {
+            return currentChar === "\u140D"
+              || currentChar === "\u140F"
+              || currentChar === "\u1413"
+              || currentChar === "\u1418"
+              || currentChar === "\u1411"
+              || currentChar === "\u1415"
+              || currentChar === "\u141A";
+        }
+
+        
+        function rotateRightWSyllable(currentChar) {
+            // syllables with short vowel:
+            if (currentChar === "\u140D") {
+                return "\u1418";
+            } else if (currentChar === "\u1418") {
+                return "\u140F";
+            } else if (currentChar === "\u140F") {
+                return "\u1413";
+            } else if (currentChar === "\u1413") {
+                return "\u140D";
+            // syllables with long vowel:
+            } else if (currentChar === "\u141A") {
+                return "\u1411";
+            } else if (currentChar === "\u1411") {
+                return "\u1415";
+            } else if (currentChar === "\u1415") {
+                return "\u141A";
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+        function lengthenWSyllable(currentChar) {
+            if (currentChar === "\u140D") {
+                return "\u140D";
+            } else if (currentChar === "\u1418") {
+                return "\u141A";
+            } else if (currentChar === "\u140F") {
+                return "\u1411";
+            } else if (currentChar === "\u1413") {
+                return "\u1415";
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+
+        
         let rotateRightFunction = rotateLastCharacterInTextField;
         let rotateRightButton = document.getElementById("rotateRightButton");
         rotateRightButton.addEventListener("click", rotateRightFunction);
+        
+        
+        
+        
+        
     </script>
 </body>
 
