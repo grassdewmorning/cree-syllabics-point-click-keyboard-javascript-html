@@ -11,6 +11,10 @@
         }
         .friendlyRomanization {
             visibility: visible;
+            color: gray;
+            font-style: italic;
+            margin-left: 0.4em;
+            font-size: 0.7em;
         }
         
         button {
@@ -20,10 +24,16 @@
             font-size: 2em;
             width: 100%;
             height: 100%;
+            background: lightgray;
         }
         
         .complexAction {
             width: auto;
+            margin-bottom: 1.8em;
+        }
+        
+        textarea {
+            font-size: 3em;
         }
     </style>
 </head>
@@ -38,7 +48,7 @@
 
     <textarea id="textOutput" name="textOutput" dir="ltr" rows="3" style="width:90%"> </textarea>
 
-    <button id="rotateRightButton" class="complexAction">Rotate Last Character Rightward</button>
+    <button id="rotateRightButton" class="complexAction">Rotate Last Character Rightward ↻</button>
     <button id="lengthenVowelButton" class="complexAction">Lengthen Vowel of Last Character</button>
 
 
@@ -106,34 +116,42 @@
                 <th>w
                 </th>
                 <td><button id="canadianSyllabicsWestCreeWeButton">ᐍ 
+                    <span class="friendlyRomanization">we</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WE (U+140D)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeWiButton">ᐏ 
+                    <span class="friendlyRomanization">wi</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WI (U+140F)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeWoButton">ᐓ 
+                    <span class="friendlyRomanization">wo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WO (U+1413)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeWaButton">ᐘ 
+                    <span class="friendlyRomanization">wa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WA (U+1418)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeWiiButton">ᐑ 
+                    <span class="friendlyRomanization">wii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WII (U+1411)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeWooButton">ᐕ 
+                    <span class="friendlyRomanization">woo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WOO (U+1415)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeWaaButton">ᐚ 
+                    <span class="friendlyRomanization">waa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE WAA (U+141A)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalRingButton">ᐤ 
+                    <span class="friendlyRomanization">w</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL RING (U+1424)</span>
                     </button>
                 </td>
@@ -144,34 +162,42 @@
                 <th>p
                 </th>
                 <td><button id="canadianSyllabicsPeButton">ᐯ 
+                    <span class="friendlyRomanization">pe</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS PE (U+142F)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsPiButton">ᐱ 
+                    <span class="friendlyRomanization">pi</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS PI (U+1431)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsPoButton">ᐳ 
+                    <span class="friendlyRomanization">po</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS PO (U+1433)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsPaButton">ᐸ 
+                    <span class="friendlyRomanization">pa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS PA (U+1438)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsPiiButton">ᐲ 
+                    <span class="friendlyRomanization">pii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS PII (U+1432)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsPooButton">ᐴ 
+                    <span class="friendlyRomanization">poo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS POO (U+1434)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsPaaButton">ᐹ 
+                    <span class="friendlyRomanization">paa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS PAA (U+1439)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreePButton">ᑊ 
+                    <span class="friendlyRomanization">p</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE P (U+144A)</span>
                     </button>
                 </td>
@@ -180,34 +206,42 @@
                 <th>t
                 </th>
                 <td><button id="canadianSyllabicsTeButton">ᑌ 
+                    <span class="friendlyRomanization">te</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TE (U+144C)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsTiButton">ᑎ 
+                    <span class="friendlyRomanization">ti</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TI (U+144E)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsToButton">ᑐ 
+                    <span class="friendlyRomanization">to</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TO (U+1450)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsTaButton">ᑕ 
+                    <span class="friendlyRomanization">ta</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TA (U+1455)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsTiiButton">ᑏ 
+                    <span class="friendlyRomanization">tii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TII (U+144F)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsTooButton">ᑑ 
+                    <span class="friendlyRomanization">too</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TOO (U+1451)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsTaaButton">ᑖ 
+                    <span class="friendlyRomanization">taa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TAA (U+1456)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalAcuteButton">ᐟ 
+                    <span class="friendlyRomanization">t</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL ACUTE (U+141F)</span>
                     </button>
                 </td>
@@ -216,34 +250,42 @@
                 <th>k
                 </th>
                 <td><button id="canadianSyllabicsKeButton">ᑫ 
+                    <span class="friendlyRomanization">ke</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KE (U+146B)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsKiButton">ᑭ 
+                    <span class="friendlyRomanization">ki</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KI (U+146D)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsKoButton">ᑯ 
+                    <span class="friendlyRomanization">ko</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KO (U+146F)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsKaButton">ᑲ 
+                    <span class="friendlyRomanization">ka</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KA (U+1472)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsKiiButton">ᑮ 
+                    <span class="friendlyRomanization">kii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KII (U+146E)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsKooButton">ᑰ 
+                    <span class="friendlyRomanization">koo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KOO (U+1470)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsKaaButton">ᑳ 
+                    <span class="friendlyRomanization">kaa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS KAA (U+1473)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalGraveButton">ᐠ 
+                    <span class="friendlyRomanization">k</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL GRAVE (U+1420)</span>
                     </button>
                 </td>
@@ -252,34 +294,42 @@
                 <th>ch
                 </th>
                 <td><button id="canadianSyllabicsCeButton">ᒉ 
+                    <span class="friendlyRomanization">ce</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS CE (U+1489)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsCiButton">ᒋ 
+                    <span class="friendlyRomanization">ci</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS CI (U+148B)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsCoButton">ᒍ 
+                    <span class="friendlyRomanization">co</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS CO (U+148D)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsCaButton">ᒐ 
+                    <span class="friendlyRomanization">ca</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS CA (U+1490)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsCiiButton">ᒌ 
+                    <span class="friendlyRomanization">cii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS CII (U+148C)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsCooButton">ᒎ 
+                    <span class="friendlyRomanization">coo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS COO (U+148E)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsCaaButton">ᒑ 
+                    <span class="friendlyRomanization">caa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS CAA (U+1491)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalShortHorizontalStrokeButton">ᐨ 
+                    <span class="friendlyRomanization">c</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL SHORT HORIZONTAL STROKE (U+1428)</span>
                     </button>
                 </td>
@@ -288,34 +338,42 @@
                 <th>m
                 </th>
                 <td><button id="canadianSyllabicsMeButton">ᒣ 
+                    <span class="friendlyRomanization">me</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS ME (U+14A3)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMiButton">ᒥ 
+                    <span class="friendlyRomanization">mi</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MI (U+14A5)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMoButton">ᒧ 
+                    <span class="friendlyRomanization">mo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MO (U+14A7)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMaButton">ᒪ 
+                    <span class="friendlyRomanization">ma</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MA (U+14AA)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMiiButton">ᒦ 
+                    <span class="friendlyRomanization">mii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MII (U+14A6)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMooButton">ᒨ 
+                    <span class="friendlyRomanization">moo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MOO (U+14A8)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMaaButton">ᒫ 
+                    <span class="friendlyRomanization">maa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MAA (U+14AB)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWestCreeMButton">ᒼ 
+                    <span class="friendlyRomanization">m</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE M (U+14BC)</span>
                     </button>
                 </td>
@@ -324,34 +382,42 @@
                 <th>n
                 </th>
                 <td><button id="canadianSyllabicsNeButton">ᓀ 
+                    <span class="friendlyRomanization">ne</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NE (U+14C0)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsNiButton">ᓂ 
+                    <span class="friendlyRomanization">ni</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NI (U+14C2)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsNoButton">ᓄ 
+                    <span class="friendlyRomanization">no</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NO (U+14C4)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsNaButton">ᓇ 
+                    <span class="friendlyRomanization">na</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NA (U+14C7)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsNiiButton">ᓃ 
+                    <span class="friendlyRomanization">nii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NII (U+14C3)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsNooButton">ᓅ 
+                    <span class="friendlyRomanization">noo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NOO (U+14C5)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsNaaButton">ᓈ 
+                    <span class="friendlyRomanization">naa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS NAA (U+14C8)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalRightHalfRingButton">ᐣ 
+                    <span class="friendlyRomanization">n</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL RIGHT HALF RING (U+1423)</span>
                     </button>
                 </td>
@@ -360,34 +426,42 @@
                 <th>s
                 </th>
                 <td><button id="canadianSyllabicsSeButton">ᓭ 
+                    <span class="friendlyRomanization">se</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SE (U+14ED)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsSiButton">ᓯ 
+                    <span class="friendlyRomanization">si</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SI (U+14EF)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsSoButton">ᓱ 
+                    <span class="friendlyRomanization">so</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SO (U+14F1)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsSaButton">ᓴ 
+                    <span class="friendlyRomanization">sa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SA (U+14F4)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsSiiButton">ᓰ 
+                    <span class="friendlyRomanization">sii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SII (U+14F0)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsSooButton">ᓲ 
+                    <span class="friendlyRomanization">soo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SOO (U+14F2)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsSaaButton">ᓵ 
+                    <span class="friendlyRomanization">saa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS SAA (U+14F5)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalTopHalfRingButton">ᐢ 
+                    <span class="friendlyRomanization">s</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL TOP HALF RING (U+1422)</span>
                     </button>
                 </td>
@@ -397,34 +471,42 @@
                 <th>th
                 </th>
                 <td><button id="canadianSyllabicsThCreeTheButton">ᖧ 
+                    <span class="friendlyRomanization">the</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THE (U+15A7)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsThCreeThiButton">ᖨ 
+                    <span class="friendlyRomanization">thi</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THI (U+15A8)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsThCreeThoButton">ᖪ 
+                    <span class="friendlyRomanization">tho</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THO (U+15AA)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsThCreeThaButton">ᖬ 
+                    <span class="friendlyRomanization">tha</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THA (U+15AC)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsThCreeThiiButton">ᖩ 
+                    <span class="friendlyRomanization">thii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THII (U+15A9)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsThCreeThooButton">ᖫ 
+                    <span class="friendlyRomanization">thoo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THOO (U+15AB)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsThCreeThaaButton">ᖭ 
+                    <span class="friendlyRomanization">thaa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE THAA (U+15AD)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsWoodsCreeFinalThButton">ᙾ 
+                    <span class="friendlyRomanization">th</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WOODS-CREE FINAL TH (U+167E)</span>
                     </button>
                 </td>
@@ -434,34 +516,42 @@
                 <th>y
                 </th>
                 <td><button id="canadianSyllabicsYeButton">ᔦ 
+                    <span class="friendlyRomanization">ye</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YE (U+1526)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYiButton">ᔨ 
+                    <span class="friendlyRomanization">yi</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YI (U+1528)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYoButton">ᔪ 
+                    <span class="friendlyRomanization">yo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YO (U+152A)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYaButton">ᔭ 
+                    <span class="friendlyRomanization">ya</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YA (U+152D)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYiiButton">ᔩ 
+                    <span class="friendlyRomanization">yii</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YII (U+1529)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYooButton">ᔫ 
+                    <span class="friendlyRomanization">yoo</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YOO (U+152B)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYaaButton">ᔮ 
+                    <span class="friendlyRomanization">yaa</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS YAA (U+152E)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalPlusButton">ᐩ 
+                    <span class="friendlyRomanization">y</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL PLUS (U+1429)</span>
                     </button>
                 </td>
@@ -479,18 +569,22 @@
                 <th>non-syllabic
                 </th>
                 <td><button id="canadianSyllabicsMedialLButton">ᓬ 
+                    <span class="friendlyRomanization">l</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MEDIAL L (U+14EC)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsMedialRButton">ᕒ 
+                    <span class="friendlyRomanization">r</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS MEDIAL R (U+1552)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsFinalDoubleShortVerticalStrokesButton">ᐦ 
+                    <span class="friendlyRomanization">h</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL DOUBLE SHORT VERTICAL STROKES (U+1426)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsHkButton">ᕽ 
+                    <span class="friendlyRomanization">hk</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS HK (U+157D)</span>
                     </button>
                 </td>
@@ -502,9 +596,9 @@
             <tr>
                 <th>whitespace
                 </th>
-                <td><button id="spaceButton">( ) SPACE (U+0020)</button>
+                <td><button id="spaceButton">( Space )  <span class="buttonDebugText">SPACE (U+0020)</span></button>
                 </td>
-                <td><button id="carriageReturnLineFeedButton">(New Line) CARRIAGE RETURN (U+000D) LINE FEED (U+000A)</button>
+                <td><button id="carriageReturnLineFeedButton">(New Line) <span class="buttonDebugText">CARRIAGE RETURN (U+000D) LINE FEED (U+000A)</span></button>
                 </td>
             </tr>
 
