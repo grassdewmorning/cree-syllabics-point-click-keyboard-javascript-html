@@ -564,6 +564,24 @@ The following are missing:
         let noButton = document.getElementById("canadianSyllabicsNoButton");
         noButton.addEventListener("click", addNoFunction);
 
+        let addNiiFunction = addSomeCharacterFunction("\u14C3");
+        let niiButton = document.getElementById("canadianSyllabicsNiiButton");
+        niiButton.addEventListener("click", addNiiFunction);
+
+        let addNooFunction = addSomeCharacterFunction("\u14C5");
+        let nooButton = document.getElementById("canadianSyllabicsNooButton");
+        nooButton.addEventListener("click", addNooFunction);
+        
+        let addNaaFunction = addSomeCharacterFunction("\u14C8");
+        let naaButton = document.getElementById("canadianSyllabicsNaaButton");
+        naaButton.addEventListener("click", addNaaFunction);
+
+        let addFinalRightHalfRingFunction = addSomeCharacterFunction("\u1423");
+        let finalRightHalfRingButton = document.getElementById("canadianSyllabicsFinalRightHalfRingButton");
+        finalRightHalfRingButton.addEventListener("click", addFinalRightHalfRingFunction);
+
+
+
         let addSaFunction = addSomeCharacterFunction("\u14F4");
         let saButton = document.getElementById("canadianSyllabicsSaButton");
         saButton.addEventListener("click", addSaFunction);
