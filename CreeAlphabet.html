@@ -253,7 +253,7 @@
                 </td>
                 <td><button id="canadianSyllabicsYaaButton">ᔮ CANADIAN SYLLABICS YAA (U+152E)</button>
                 </td>
-                <td><button id="canadianSyllabicsFinalPlus">ᐩ CANADIAN SYLLABICS FINAL PLUS (U+1429) (ᐝ CANADIAN SYLLABICS Y-CREE W (U+141D))</button>
+                <td><button id="canadianSyllabicsFinalPlusButton">ᐩ CANADIAN SYLLABICS FINAL PLUS (U+1429) (ᐝ CANADIAN SYLLABICS Y-CREE W (U+141D))</button>
                 </td>
             </tr>
             <tr>
@@ -263,7 +263,7 @@
                 </td>
                 <td><button id="canadianSyllabicsMedialRButton">ᕒ CANADIAN SYLLABICS MEDIAL R (U+1552)</button>
                 </td>
-                <td><button id="canadianSyllabicsDoubleShortVerticalStrokesButton">ᐦ CANADIAN SYLLABICS FINAL DOUBLE SHORT VERTICAL STROKES (U+1426)</button>
+                <td><button id="canadianSyllabicsFinalDoubleShortVerticalStrokesButton">ᐦ CANADIAN SYLLABICS FINAL DOUBLE SHORT VERTICAL STROKES (U+1426)</button>
                 </td>
                 <td><button id="canadianSyllabicsHkButton">ᕽ CANADIAN SYLLABICS HK (U+157D)</button>
                 </td>
@@ -280,23 +280,6 @@
             };
 
 
-        /*
-
-The following are missing:
-ᑏ | ᑑ | ᑖ | ᐟ
-ᑮ | ᑰ | ᑳ | ᐠ
-ᒌ | ᒎ | ᒑ | ᐨ
-ᒦ | ᒨ | ᒫ | ᒼ
-ᓃ | ᓅ | ᓈ | ᐣ
-ᓰ | ᓲ | ᓵ | ᐢ
-ᖧ | ᖨ | ᖪ | ᖬ | ᖩ | ᖫ | ᖭ | ‡
-ᔩ | ᔫ | ᔮ | ᐩ (ᐝ)
-ᓬ
-ᕒ
-ᐦ
-ᕽ
-
-        */
 
 
         let addAFunction = addSomeCharacterFunction("\u140A");
@@ -598,6 +581,62 @@ The following are missing:
         let soButton = document.getElementById("canadianSyllabicsSoButton");
         soButton.addEventListener("click", addSoFunction);
 
+        let addSiiFunction = addSomeCharacterFunction("\u14F0");
+        let siiButton = document.getElementById("canadianSyllabicsSiiButton");
+        siiButton.addEventListener("click", addSiiFunction);
+
+        let addSooFunction = addSomeCharacterFunction("\u14F2");
+        let sooButton = document.getElementById("canadianSyllabicsSooButton");
+        sooButton.addEventListener("click", addSooFunction);
+        
+        let addSaaFunction = addSomeCharacterFunction("\u14F5");
+        let saaButton = document.getElementById("canadianSyllabicsSaaButton");
+        saaButton.addEventListener("click", addSaaFunction);
+
+        let addFinalTopHalfRingFunction = addSomeCharacterFunction("\u1422");
+        let finalTopHalfRingButton = document.getElementById("canadianSyllabicsFinalTopHalfRingButton");
+        finalTopHalfRingButton.addEventListener("click", addFinalTopHalfRingFunction);
+
+
+
+
+
+        let addThCreeThaFunction = addSomeCharacterFunction("\u15AC");
+        let thCreeThaButton = document.getElementById("canadianSyllabicsThCreeThaButton");
+        thCreeThaButton.addEventListener("click", addThCreeThaFunction);
+
+        let addThCreeTheFunction = addSomeCharacterFunction("\u15A7");
+        let theCreeTheButton = document.getElementById("canadianSyllabicsThCreeTheButton");
+        theCreeTheButton.addEventListener("click", addThCreeTheFunction);
+
+        let addThCreeThiFunction = addSomeCharacterFunction("\u15A8");
+        let thCreeThiButton = document.getElementById("canadianSyllabicsThCreeThiButton");
+        thCreeThiButton.addEventListener("click", addThCreeThiFunction);
+
+        let addThCreeThoFunction = addSomeCharacterFunction("\u15AA");
+        let thCreeThoButton = document.getElementById("canadianSyllabicsThCreeThoButton");
+        thCreeThoButton.addEventListener("click", addThCreeThoFunction);
+
+        let addThCreeThiiFunction = addSomeCharacterFunction("\u15A9");
+        let thCreeThiiButton = document.getElementById("canadianSyllabicsThCreeThiiButton");
+        thCreeThiiButton.addEventListener("click", addThCreeThiiFunction);
+
+        let addThCreeThooFunction = addSomeCharacterFunction("\u15AB");
+        let thCreeThooButton = document.getElementById("canadianSyllabicsThCreeThooButton");
+        thCreeThooButton.addEventListener("click", addThCreeThooFunction);
+        
+        let addThCreeThaaFunction = addSomeCharacterFunction("\u15AD");
+        let thCreeThaaButton = document.getElementById("canadianSyllabicsThCreeThaaButton");
+        thCreeThaaButton.addEventListener("click", addThCreeThaaFunction);
+
+        let addWoodsCreeFinalThFunction = addSomeCharacterFunction("\u167E");
+        let woodsCreeFinalThButton = document.getElementById("canadianSyllabicsWoodsCreeFinalThButton");
+        woodsCreeFinalThButton.addEventListener("click", addWoodsCreeFinalThFunction);
+
+
+
+
+
         let addYaFunction = addSomeCharacterFunction("\u152D");
         let yaButton = document.getElementById("canadianSyllabicsYaButton");
         yaButton.addEventListener("click", addYaFunction);
@@ -613,6 +652,45 @@ The following are missing:
         let addYoFunction = addSomeCharacterFunction("\u152A");
         let yoButton = document.getElementById("canadianSyllabicsYoButton");
         yoButton.addEventListener("click", addYoFunction);
+
+        let addYiiFunction = addSomeCharacterFunction("\u1529");
+        let yiiButton = document.getElementById("canadianSyllabicsYiiButton");
+        yiiButton.addEventListener("click", addYiiFunction);
+
+        let addYooFunction = addSomeCharacterFunction("\u152B");
+        let yooButton = document.getElementById("canadianSyllabicsYooButton");
+        yooButton.addEventListener("click", addYooFunction);
+        
+        let addYaaFunction = addSomeCharacterFunction("\u152E");
+        let yaaButton = document.getElementById("canadianSyllabicsYaaButton");
+        yaaButton.addEventListener("click", addYaaFunction);
+
+        let addFinalPlusFunction = addSomeCharacterFunction("\u1429");
+        let finalPlusButton = document.getElementById("canadianSyllabicsFinalPlusButton");
+        finalPlusButton.addEventListener("click", addFinalPlusFunction);
+        
+        
+
+
+
+        let addMedialLFunction = addSomeCharacterFunction("\u14EC");
+        let medialLButton = document.getElementById("canadianSyllabicsMedialLButton");
+        medialLButton.addEventListener("click", addMedialLFunction);
+
+        let addMedialRFunction = addSomeCharacterFunction("\u1552");
+        let medialRButton = document.getElementById("canadianSyllabicsMedialRButton");
+        medialRButton.addEventListener("click", addMedialRFunction);
+
+        let addFinalDoubleShortVerticalStrokesFunction = addSomeCharacterFunction("\u1426");
+        let finalDoubleShortVerticalStrokesButton = document.getElementById("canadianSyllabicsFinalDoubleShortVerticalStrokesButton");
+        finalDoubleShortVerticalStrokesButton.addEventListener("click", addFinalDoubleShortVerticalStrokesFunction);
+
+        let addHkFunction = addSomeCharacterFunction("\u157D");
+        let hkButton = document.getElementById("canadianSyllabicsHkButton");
+        hkButton.addEventListener("click", addHkFunction);
+
+        
+
     </script>
 </body>
 
