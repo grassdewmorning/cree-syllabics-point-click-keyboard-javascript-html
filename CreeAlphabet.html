@@ -13,6 +13,8 @@
     <textarea id="textOutput" name="textOutput" dir="ltr" rows="3" style="width:90%"> </textarea>
 
     <button id="rotateRightButton">ROTATE CHARACTER RIGHT</button>
+    <button id="lengthenVowelButton">LENGTHEN VOWEL</button>
+
 
     <table>
         <tbody>
@@ -286,6 +288,28 @@
 
 
     <script>
+    
+        // The following constants are defined to make the code more readable only. They should not be changed, unless Unicode is abandoned as an encoding.
+        const CANADIAN_SYLLABICS_E = "\u1401";
+        const CANADIAN_SYLLABICS_I = "\u1403";
+        const CANADIAN_SYLLABICS_O = "\u1405";
+        const CANADIAN_SYLLABICS_A = "\u140A";
+        const CANADIAN_SYLLABICS_II = "\u1404";
+        const CANADIAN_SYLLABICS_OO = "\u1406";
+        const CANADIAN_SYLLABICS_AA = "\u140B";
+        
+        const CANADIAN_SYLLABICS_WEST_CREE_WE = "\u140D";
+        const CANADIAN_SYLLABICS_WEST_CREE_WI = "\u140F";
+        const CANADIAN_SYLLABICS_WEST_CREE_WO = "\u1413";
+        const CANADIAN_SYLLABICS_WEST_CREE_WA = "\u1418";
+        const CANADIAN_SYLLABICS_WEST_CREE_WII = "\u1411";
+        const CANADIAN_SYLLABICS_WEST_CREE_WOO = "\u1415";
+        const CANADIAN_SYLLABICS_WEST_CREE_WAA = "\u141A";
+        const CANADIAN_SYLLABICS_FINAL_RING = "\u1424";
+
+
+        
+    
         let addSomeCharacterFunction = (character) =>
             (event) => {
                 let textOutput = document.getElementById("textOutput");
@@ -293,66 +317,67 @@
             };
         
 
-
-        let addAFunction = addSomeCharacterFunction("\u140A");
-        let aButton = document.getElementById("canadianSyllabicsAButton");
-        aButton.addEventListener("click", addAFunction);
-
-        let addEFunction = addSomeCharacterFunction("\u1401");
+        let addEFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_E);
         let eButton = document.getElementById("canadianSyllabicsEButton");
         eButton.addEventListener("click", addEFunction);
 
-        let addIFunction = addSomeCharacterFunction("\u1403");
+
+        let addIFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_I);
         let iButton = document.getElementById("canadianSyllabicsIButton");
         iButton.addEventListener("click", addIFunction);
 
-        let addOFunction = addSomeCharacterFunction("\u1405");
+        let addOFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_O);
         let oButton = document.getElementById("canadianSyllabicsOButton");
         oButton.addEventListener("click", addOFunction);
 
-        let addIiFunction = addSomeCharacterFunction("\u1404");
+        let addAFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_A);
+        let aButton = document.getElementById("canadianSyllabicsAButton");
+        aButton.addEventListener("click", addAFunction);
+
+
+        let addIiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_II);
         let iiButton = document.getElementById("canadianSyllabicsIiButton");
         iiButton.addEventListener("click", addIiFunction);
 
-        let addOoFunction = addSomeCharacterFunction("\u1406");
+        let addOoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_OO);
         let ooButton = document.getElementById("canadianSyllabicsOoButton");
         ooButton.addEventListener("click", addOoFunction);
 
-        let addAaFunction = addSomeCharacterFunction("\u140B");
+        let addAaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_AA);
         let aaButton = document.getElementById("canadianSyllabicsAaButton");
         aaButton.addEventListener("click", addAaFunction);
 
 
 
-        let addWaFunction = addSomeCharacterFunction("\u1418");
+        let addWaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WA);
         let waButton = document.getElementById("canadianSyllabicsWestCreeWaButton");
         waButton.addEventListener("click", addWaFunction);
 
-        let addWeFunction = addSomeCharacterFunction("\u140D");
+        let addWeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WE);
         let weButton = document.getElementById("canadianSyllabicsWestCreeWeButton");
         weButton.addEventListener("click", addWeFunction);
 
-        let addWiFunction = addSomeCharacterFunction("\u140F");
+        let addWiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WI);
         let wiButton = document.getElementById("canadianSyllabicsWestCreeWiButton");
         wiButton.addEventListener("click", addWiFunction);
 
-        let addWoFunction = addSomeCharacterFunction("\u1413");
+        let addWoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WO);
         let woButton = document.getElementById("canadianSyllabicsWestCreeWoButton");
         woButton.addEventListener("click", addWoFunction);
 
-        let addWiiFunction = addSomeCharacterFunction("\u1411");
+        let addWiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WII);
         let wiiButton = document.getElementById("canadianSyllabicsWestCreeWiiButton");
         wiiButton.addEventListener("click", addWiiFunction);
 
-        let addWooFunction = addSomeCharacterFunction("\u1415");
+        let addWooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WOO);
         let wooButton = document.getElementById("canadianSyllabicsWestCreeWooButton");
         wooButton.addEventListener("click", addWooFunction);
 
-        let addWaaFunction = addSomeCharacterFunction("\u141A");
+        let addWaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WAA);
         let waaButton = document.getElementById("canadianSyllabicsWestCreeWaaButton");
         waaButton.addEventListener("click", addWaaFunction);
 
-        let addFinalRingFunction = addSomeCharacterFunction("\u1424");
+        let addFinalRingFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_RING);
         let finalRingButton = document.getElementById("canadianSyllabicsFinalRingButton");
         finalRingButton.addEventListener("click", addFinalRingFunction);
 
@@ -705,7 +730,7 @@
         
         // Advanced functionality: Syllable grapheme rotation
         
-        let rotateLastCharacterInTextField = (event) => {
+        let rotateRightLastCharacterInTextField = (event) => {
             let textOutput = document.getElementById("textOutput");
             let textOutputInitialValue = textOutput.value;
             if (textOutputInitialValue) {
@@ -732,44 +757,72 @@
         }
         
         function isNonConsonantInitialSyllable(currentChar) {
-            return currentChar === "\u1401"
-              || currentChar === "\u1403"
-              || currentChar === "\u1405"
-              || currentChar === "\u140A"
-              || currentChar === "\u1404"
-              || currentChar === "\u1406"
-              || currentChar === "\u140B";
+            return currentChar === CANADIAN_SYLLABICS_E
+              || currentChar === CANADIAN_SYLLABICS_I
+              || currentChar === CANADIAN_SYLLABICS_O
+              || currentChar === CANADIAN_SYLLABICS_A
+              || currentChar === CANADIAN_SYLLABICS_II
+              || currentChar === CANADIAN_SYLLABICS_OO
+              || currentChar === CANADIAN_SYLLABICS_AA;
         }
 
         function rotateRightNonConsonantInitialSyllable(currentChar) {
-            if (currentChar === "\u1401") {
-                return "\u140A";
-            } else if (currentChar === "\u140A") {
-                return "\u1403";
-            } else if (currentChar === "\u1403") {
-                return "\u1405";
-            } else if (currentChar === "\u1405") {
-                return "\u1401";
-            } else if (currentChar === "\u140B") {
-                return "\u1404";
-            } else if (currentChar === "\u1404") {
-                return "\u1406";
-            } else if (currentChar === "\u1406") {
-                return "\u140B";
+            if (currentChar === CANADIAN_SYLLABICS_E) {
+                return CANADIAN_SYLLABICS_A;
+            } else if (currentChar === CANADIAN_SYLLABICS_A) {
+                return CANADIAN_SYLLABICS_I;
+            } else if (currentChar === CANADIAN_SYLLABICS_I) {
+                return CANADIAN_SYLLABICS_O;
+            } else if (currentChar === CANADIAN_SYLLABICS_O) {
+                return CANADIAN_SYLLABICS_E;
+            } else if (currentChar === CANADIAN_SYLLABICS_AA) {
+                return CANADIAN_SYLLABICS_II;
+            } else if (currentChar === CANADIAN_SYLLABICS_II) {
+                return CANADIAN_SYLLABICS_OO;
+            } else if (currentChar === CANADIAN_SYLLABICS_OO) {
+                return CANADIAN_SYLLABICS_AA;
             } else {
                 console.log("not a recognized character for this function");
             }
         }
 
+
+        let lengthenVowelOfLastCharacterInTextField = (event) => {
+            let textOutput = document.getElementById("textOutput");
+            let textOutputInitialValue = textOutput.value;
+            if (textOutputInitialValue) {
+                let valueLength = textOutputInitialValue.length;
+                if (valueLength < 1) {
+                    return; // There is no character to rotate. Nothing to do here.
+                }
+                let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
+                if (isNonConsonantInitialSyllable(lastChar)) {
+                    let lengthenedChar = lengthenNonConsonantInitialSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
+                } if (isWSyllable(lastChar)) {
+                    let lengthenedChar = lengthenWSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
+                }
+                else {
+                    console.log("cannot lengthen the last character");
+                }
+            }
+        }
+
+
         function lengthenNonConsonantInitialSyllable(currentChar) {
-            if (currentChar === "\u1401") {
-                return "\u1401";
-            } else if (currentChar === "\u140A") {
-                return "\u140B";
-            } else if (currentChar === "\u1403") {
-                return "\u1404";
-            } else if (currentChar === "\u1405") {
-                return "\u1406";
+            if (currentChar === CANADIAN_SYLLABICS_E) {
+                return CANADIAN_SYLLABICS_E;
+            } else if (currentChar === CANADIAN_SYLLABICS_A) {
+                return CANADIAN_SYLLABICS_AA;
+            } else if (currentChar === CANADIAN_SYLLABICS_I) {
+                return CANADIAN_SYLLABICS_II;
+            } else if (currentChar === CANADIAN_SYLLABICS_O) {
+                return CANADIAN_SYLLABICS_OO;
             } else {
                 console.log("not a recognized character for this function");
             }
@@ -777,58 +830,93 @@
 
 
         function isWSyllable(currentChar) {
-            return currentChar === "\u140D"
-              || currentChar === "\u140F"
-              || currentChar === "\u1413"
-              || currentChar === "\u1418"
-              || currentChar === "\u1411"
-              || currentChar === "\u1415"
-              || currentChar === "\u141A";
+            return currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WI
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WO
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WA
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WII
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WOO
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WAA;
         }
 
         
         function rotateRightWSyllable(currentChar) {
             // syllables with short vowel:
-            if (currentChar === "\u140D") {
-                return "\u1418";
-            } else if (currentChar === "\u1418") {
-                return "\u140F";
-            } else if (currentChar === "\u140F") {
-                return "\u1413";
-            } else if (currentChar === "\u1413") {
-                return "\u140D";
+            if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WA;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WA) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WI;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WI) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WO;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WO) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WE;
             // syllables with long vowel:
-            } else if (currentChar === "\u141A") {
-                return "\u1411";
-            } else if (currentChar === "\u1411") {
-                return "\u1415";
-            } else if (currentChar === "\u1415") {
-                return "\u141A";
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WAA) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WII;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WII) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WOO;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WOO) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WAA;
             } else {
                 console.log("not a recognized character for this function");
             }
         }
 
         function lengthenWSyllable(currentChar) {
-            if (currentChar === "\u140D") {
-                return "\u140D";
-            } else if (currentChar === "\u1418") {
-                return "\u141A";
-            } else if (currentChar === "\u140F") {
-                return "\u1411";
-            } else if (currentChar === "\u1413") {
-                return "\u1415";
+            if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WE;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WA) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WAA;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WI) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WII;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WO) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WOO;
             } else {
                 console.log("not a recognized character for this function");
             }
         }
+        
+        function isPSyllable(currentChar) {
+            return currentChar === "\u142F"
+              || currentChar === "\u1431"
+              || currentChar === "\u1433"
+              || currentChar === "\u1438"
+              || currentChar === "\u1432"
+              || currentChar === "\u1434"
+              || currentChar === "\u1439"
+              || currentChar === "\u144A";
+        }
 
+        function isTSyllable(currentChar) {
+            return currentChar === "\u144C"
+              || currentChar === "\u144E"
+              || currentChar === "\u1450"
+              || currentChar === "\u1455"
+              || currentChar === "\u144F"
+              || currentChar === "\u1451"
+              || currentChar === "\u1456"
+              || currentChar === "\u141F";
+        }
+
+        function isKSyllable(currentChar) {
+            return currentChar === "\u146B"
+              || currentChar === "\u146D"
+              || currentChar === "\u146F"
+              || currentChar === "\u1472"
+              || currentChar === "\u146E"
+              || currentChar === "\u1470"
+              || currentChar === "\u1473"
+              || currentChar === "\u1420";
+        }
 
         
-        let rotateRightFunction = rotateLastCharacterInTextField;
+        let rotateRightFunction = rotateRightLastCharacterInTextField;
         let rotateRightButton = document.getElementById("rotateRightButton");
         rotateRightButton.addEventListener("click", rotateRightFunction);
         
+        let lengthenVowelFunction = lengthenVowelOfLastCharacterInTextField;
+        let lengthenVowelButton = document.getElementById("lengthenVowelButton");
+        lengthenVowelButton.addEventListener("click", lengthenVowelFunction);
         
         
         
