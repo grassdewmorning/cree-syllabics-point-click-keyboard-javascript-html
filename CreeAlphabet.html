@@ -510,6 +510,23 @@ The following are missing:
         moButton.addEventListener("click", addMoFunction);
 
 
+        // CANADIAN SYLLABICS MII (U+14A6)
+        let addMiiFunction = addSomeCharacterFunction("\u14A6");
+        let miiButton = document.getElementById("canadianSyllabicsMiiButton");
+        miiButton.addEventListener("click", addMiiFunction);
+
+        // CANADIAN SYLLABICS MOO (U+14A8)
+        let addMooFunction = addSomeCharacterFunction("\u14A8");
+        let mooButton = document.getElementById("canadianSyllabicsMooButton");
+        mooButton.addEventListener("click", addMooFunction);
+        
+        // CANADIAN SYLLABICS MAA (U+14AB)
+        let addMaaFunction = addSomeCharacterFunction("\u14AB");
+        let maaButton = document.getElementById("canadianSyllabicsMaaButton");
+        maaButton.addEventListener("click", addMaaFunction);
+        
+
+
         let addNaFunction = addSomeCharacterFunction("\u14C7");
         let naButton = document.getElementById("canadianSyllabicsNaButton");
         naButton.addEventListener("click", addNaFunction);
