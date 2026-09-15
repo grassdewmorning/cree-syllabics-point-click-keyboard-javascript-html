@@ -646,6 +646,50 @@
                 </td>
             </tr>
             <tr class="eastCreeRow">
+                <th>f
+                </th>
+                <td><button id="canadianSyllabicsFeButton">ᕓ 
+                    <span class="friendlyRomanization">fe</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FE (U+1553)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFiButton">ᕕ
+                    <span class="friendlyRomanization">fi</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FI (U+1555)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFoButton">ᕗ 
+                    <span class="friendlyRomanization">fo</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FO (U+1557)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFaButton">ᕙ 
+                    <span class="friendlyRomanization">fa</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FA (U+1559)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFiiButton">ᕖ
+                    <span class="friendlyRomanization">fii</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FII (U+1556)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFooButton">ᕘ
+                    <span class="friendlyRomanization">foo</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FOO (U+1558)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFaaButton">ᕚ
+                    <span class="friendlyRomanization">faa</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FAA (U+155A)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsFButton">ᕝ
+                    <span class="friendlyRomanization">f</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS F (U+155D)</span>
+                    </button>
+                </td>
+            </tr>
+            <tr class="eastCreeRow">
                 <th>th
                 </th>
                 <td><button id="canadianSyllabicsTheButton">ᕞ 
@@ -919,6 +963,18 @@
     const CANADIAN_SYLLABICS_THWAA = "\u1568";
     const CANADIAN_SYLLABICS_TH = "\u156A";
 
+    const CANADIAN_SYLLABICS_FE = "\u1553";
+    // OMITTED CHARACTER // CANADIAN SYLLABICS FWE not found in Unicode right now
+    const CANADIAN_SYLLABICS_FI = "\u1555";
+    const CANADIAN_SYLLABICS_FII = "\u1556";
+    const CANADIAN_SYLLABICS_FO = "\u1557";
+    const CANADIAN_SYLLABICS_FOO = "\u1558";
+    const CANADIAN_SYLLABICS_FA = "\u1559";
+    const CANADIAN_SYLLABICS_FAA = "\u155A";
+    const CANADIAN_SYLLABICS_FWAA = "\u155B";
+    const CANADIAN_SYLLABICS_F = "\u155D";
+
+
 
     const NORTH = "north";
     const EAST = "east";
@@ -1060,6 +1116,17 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THAA, "canadianSyllabicsThCreeThaaButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_WOODS_CREE_FINAL_TH, "canadianSyllabicsWoodsCreeFinalThButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_TH, "canadianSyllabicsThCreeThButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_FE, "canadianSyllabicsFeButton");
+        // OMITTED CHARACTER // CANADIAN SYLLABICS FWE not found in Unicode right now
+        setupButtonForWriting(CANADIAN_SYLLABICS_FI, "canadianSyllabicsFiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FII, "canadianSyllabicsFiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FO, "canadianSyllabicsFoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FOO, "canadianSyllabicsFooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FA, "canadianSyllabicsFaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FAA, "canadianSyllabicsFaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FWAA, "canadianSyllabicsFwaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_F, "canadianSyllabicsFButton");
 
 
         setupButtonForWriting(CANADIAN_SYLLABICS_THE, "canadianSyllabicsTheButton");
