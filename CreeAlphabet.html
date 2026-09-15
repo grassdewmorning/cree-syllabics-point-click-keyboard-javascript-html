@@ -703,6 +703,7 @@
     <script>
     
     // The following constants are defined to make the code more readable only. They should not be changed, unless Unicode is abandoned as an encoding.
+    // To avoid confusion, do not rename these constants. The names are taken from the Unicode standard.
     const CANADIAN_SYLLABICS_E = "\u1401";
     const CANADIAN_SYLLABICS_I = "\u1403";
     const CANADIAN_SYLLABICS_O = "\u1405";
@@ -875,294 +876,117 @@
 
 
 
+    // In the following section of the code we define which buttons have the 
+    // behavior of writing text into a text field, and what they write.
         setupButtonForWriting(CANADIAN_SYLLABICS_E, "canadianSyllabicsEButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_I, "canadianSyllabicsIButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_O, "canadianSyllabicsOButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_A, "canadianSyllabicsAButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_II, "canadianSyllabicsIiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_OO, "canadianSyllabicsOoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_AA, "canadianSyllabicsAaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WA, "canadianSyllabicsWestCreeWaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WE, "canadianSyllabicsWestCreeWeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WI, "canadianSyllabicsWestCreeWiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WO, "canadianSyllabicsWestCreeWoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WII, "canadianSyllabicsWestCreeWiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WOO, "canadianSyllabicsWestCreeWooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WAA, "canadianSyllabicsWestCreeWaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RING, "canadianSyllabicsFinalRingButton");
 
 
-        setupButtonForWriting(CANADIAN_SYLLABICS_I
-        , "canadianSyllabicsIButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WA, "canadianSyllabicsWaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WE, "canadianSyllabicsWeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WI, "canadianSyllabicsWiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WO, "canadianSyllabicsWoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WII, "canadianSyllabicsWiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WOO, "canadianSyllabicsWooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WAA, "canadianSyllabicsWaaButton");
 
-        setupButtonForWriting(CANADIAN_SYLLABICS_O
-        , "canadianSyllabicsOButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_A
-        , "canadianSyllabicsAButton");
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_II
-        , "canadianSyllabicsIiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_OO
-        , "canadianSyllabicsOoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_AA
-        , "canadianSyllabicsAaButton");
-
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WA
-        , "canadianSyllabicsWestCreeWaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WE
-        , "canadianSyllabicsWestCreeWeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WI
-        , "canadianSyllabicsWestCreeWiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WO
-        , "canadianSyllabicsWestCreeWoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WII
-        , "canadianSyllabicsWestCreeWiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WOO
-        , "canadianSyllabicsWestCreeWooButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WAA
-        , "canadianSyllabicsWestCreeWaaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RING
-        , "canadianSyllabicsFinalRingButton");
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WA
-        , "canadianSyllabicsWaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WE
-        , "canadianSyllabicsWeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WI
-        , "canadianSyllabicsWiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WO
-        , "canadianSyllabicsWoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WII
-        , "canadianSyllabicsWiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WOO
-        , "canadianSyllabicsWooButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WAA
-        , "canadianSyllabicsWaaButton");
-
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_PA
-        , "canadianSyllabicsPaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_PE
-        , "canadianSyllabicsPeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_PI
-        , "canadianSyllabicsPiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_PO
-        , "canadianSyllabicsPoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_PII
-        , "canadianSyllabicsPiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_POO
-        , "canadianSyllabicsPooButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_PAA
-        , "canadianSyllabicsPaaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_P
-        , "canadianSyllabicsWestCreePButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_PA, "canadianSyllabicsPaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_PE, "canadianSyllabicsPeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_PI, "canadianSyllabicsPiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_PO, "canadianSyllabicsPoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_PII, "canadianSyllabicsPiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_POO, "canadianSyllabicsPooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_PAA, "canadianSyllabicsPaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_P, "canadianSyllabicsWestCreePButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_P, "canadianSyllabicsPButton");
 
 
-        setupButtonForWriting(CANADIAN_SYLLABICS_TA
-        , "canadianSyllabicsTaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TE
-        , "canadianSyllabicsTeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TI
-        , "canadianSyllabicsTiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TO
-        , "canadianSyllabicsToButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TII
-        , "canadianSyllabicsTiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TOO
-        , "canadianSyllabicsTooButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_TAA
-        , "canadianSyllabicsTaaButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_ACUTE
-        , "canadianSyllabicsFinalAcuteButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_TA, "canadianSyllabicsTaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TE, "canadianSyllabicsTeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TI, "canadianSyllabicsTiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TO, "canadianSyllabicsToButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TII, "canadianSyllabicsTiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TOO, "canadianSyllabicsTooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TAA, "canadianSyllabicsTaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_ACUTE, "canadianSyllabicsFinalAcuteButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_T, "canadianSyllabicsTButton");
 
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_KA
-        , "canadianSyllabicsKaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_KE
-        , "canadianSyllabicsKeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_KI
-        , "canadianSyllabicsKiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_KO
-        , "canadianSyllabicsKoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_KII
-        , "canadianSyllabicsKiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_KOO
-        , "canadianSyllabicsKooButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_KAA
-        , "canadianSyllabicsKaaButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_GRAVE
-        , "canadianSyllabicsFinalGraveButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_KA, "canadianSyllabicsKaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KE, "canadianSyllabicsKeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KI, "canadianSyllabicsKiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KO, "canadianSyllabicsKoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KII, "canadianSyllabicsKiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KOO, "canadianSyllabicsKooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KAA, "canadianSyllabicsKaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_GRAVE, "canadianSyllabicsFinalGraveButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_K, "canadianSyllabicsKButton");
 
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_CA
-        , "canadianSyllabicsCaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_CE
-        , "canadianSyllabicsCeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_CI
-        , "canadianSyllabicsCiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_CO
-        , "canadianSyllabicsCoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_CII
-        , "canadianSyllabicsCiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_COO
-        , "canadianSyllabicsCooButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_CAA
-        , "canadianSyllabicsCaaButton");
-        
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE
-        , "canadianSyllabicsFinalShortHorizontalStrokeButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_CA, "canadianSyllabicsCaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_CE, "canadianSyllabicsCeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_CI, "canadianSyllabicsCiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_CO, "canadianSyllabicsCoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_CII, "canadianSyllabicsCiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_COO, "canadianSyllabicsCooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_CAA, "canadianSyllabicsCaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE, "canadianSyllabicsFinalShortHorizontalStrokeButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_C, "canadianSyllabicsCButton");
 
 
 
 
-        setupButtonForWriting(CANADIAN_SYLLABICS_MA
-        , "canadianSyllabicsMaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_ME
-        , "canadianSyllabicsMeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_MI
-        , "canadianSyllabicsMiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_MO
-        , "canadianSyllabicsMoButton");
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_MII
-        , "canadianSyllabicsMiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_MOO
-        , "canadianSyllabicsMooButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_MAA
-        , "canadianSyllabicsMaaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_M
-        , "canadianSyllabicsWestCreeMButton");
-        
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_MA, "canadianSyllabicsMaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_ME, "canadianSyllabicsMeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_MI, "canadianSyllabicsMiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_MO, "canadianSyllabicsMoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_MII, "canadianSyllabicsMiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_MOO, "canadianSyllabicsMooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_MAA, "canadianSyllabicsMaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_M, "canadianSyllabicsWestCreeMButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_M, "canadianSyllabicsMButton");
 
 
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_NA
-        , "canadianSyllabicsNaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_NE
-        , "canadianSyllabicsNeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_NI
-        , "canadianSyllabicsNiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_NO
-        , "canadianSyllabicsNoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_NII
-        , "canadianSyllabicsNiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_NOO
-        , "canadianSyllabicsNooButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_NAA
-        , "canadianSyllabicsNaaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RIGHT_HALF_RING
-        , "canadianSyllabicsFinalRightHalfRingButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_NA, "canadianSyllabicsNaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_NE, "canadianSyllabicsNeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_NI, "canadianSyllabicsNiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_NO, "canadianSyllabicsNoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_NII, "canadianSyllabicsNiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_NOO, "canadianSyllabicsNooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_NAA, "canadianSyllabicsNaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RIGHT_HALF_RING, "canadianSyllabicsFinalRightHalfRingButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_N, "canadianSyllabicsNButton");
 
 
-        setupButtonForWriting(CANADIAN_SYLLABICS_SA
-        , "canadianSyllabicsSaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_SE
-        , "canadianSyllabicsSeButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_SI
-        , "canadianSyllabicsSiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_SO
-        , "canadianSyllabicsSoButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_SII
-        , "canadianSyllabicsSiiButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_SOO
-        , "canadianSyllabicsSooButton");
-        
-        setupButtonForWriting(CANADIAN_SYLLABICS_SAA
-        , "canadianSyllabicsSaaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_TOP_HALF_RING
-        , "canadianSyllabicsFinalTopHalfRingButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_SA, "canadianSyllabicsSaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_SE, "canadianSyllabicsSeButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_SI, "canadianSyllabicsSiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_SO, "canadianSyllabicsSoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_SII, "canadianSyllabicsSiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_SOO, "canadianSyllabicsSooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_SAA, "canadianSyllabicsSaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_TOP_HALF_RING, "canadianSyllabicsFinalTopHalfRingButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_S, "canadianSyllabicsSButton");
 
 
-
-
-
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THA
-        , "canadianSyllabicsThCreeThaButton");
-
-        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THE
-        , "canadianSyllabicsThCreeTheButton");
-
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THA, "canadianSyllabicsThCreeThaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THE, "canadianSyllabicsThCreeTheButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THI, "canadianSyllabicsThCreeThiButton");
-
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THO, "canadianSyllabicsThCreeThoButton");
-
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THII, "canadianSyllabicsThCreeThiiButton");
-
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THOO, "canadianSyllabicsThCreeThooButton");
-        
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THAA, "canadianSyllabicsThCreeThaaButton");
-
         setupButtonForWriting(CANADIAN_SYLLABICS_WOODS_CREE_FINAL_TH, "canadianSyllabicsWoodsCreeFinalThButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_TH, "canadianSyllabicsThCreeThButton");
 
@@ -1625,7 +1449,8 @@
               || currentChar === CANADIAN_SYLLABICS_TII
               || currentChar === CANADIAN_SYLLABICS_TOO
               || currentChar === CANADIAN_SYLLABICS_TAA
-              || currentChar === CANADIAN_SYLLABICS_FINAL_ACUTE;
+              || currentChar === CANADIAN_SYLLABICS_FINAL_ACUTE
+              || currentChar === CANADIAN_SYLLABICS_T;
         }
 
 
@@ -1674,7 +1499,8 @@
               || currentChar === CANADIAN_SYLLABICS_KII
               || currentChar === CANADIAN_SYLLABICS_KOO
               || currentChar === CANADIAN_SYLLABICS_KAA
-              || currentChar === CANADIAN_SYLLABICS_FINAL_GRAVE;
+              || currentChar === CANADIAN_SYLLABICS_FINAL_GRAVE
+              || currentChar === CANADIAN_SYLLABICS_K;
         }
 
 
@@ -1725,7 +1551,8 @@
               || currentChar === CANADIAN_SYLLABICS_CII
               || currentChar === CANADIAN_SYLLABICS_COO
               || currentChar === CANADIAN_SYLLABICS_CAA
-              || currentChar === CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE;
+              || currentChar === CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE
+              || currentChar === CANADIAN_SYLLABICS_C;
         }
 
 
