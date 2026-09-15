@@ -7,8 +7,8 @@
     <style>
         .buttonDebugText {
             display: none;
- 
         }
+
         .friendlyRomanization {
             visibility: visible;
             color: gray;
@@ -16,7 +16,7 @@
             margin-left: 0.4em;
             font-size: 0.7em;
         }
-        
+
         button {
             display: inline-block;
             padding: 0.34em;
@@ -26,12 +26,12 @@
             height: 100%;
             background: lightgray;
         }
-        
+
         .complexAction {
             width: auto;
             margin-bottom: 1.8em;
         }
-        
+
         textarea {
             font-size: 3em;
         }
@@ -45,11 +45,6 @@
         }
     </style>
 </head>
-<body>
-
-
-</head>
-
 <body>
 
     <h1 lang="en">Cree Syllabics Point-and-Click Keyboard</h1>
@@ -86,7 +81,7 @@
             <tr>
                 <th>-
                 </th>
-                <td><button id="canadianSyllabicsEButton" typeableText="&#x1401">ᐁ 
+                <td><button id="canadianSyllabicsEButton">ᐁ 
                     <span class="friendlyRomanization">e</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS E (U+1401)</span></button>
                 </td>
@@ -707,33 +702,33 @@
 
     <script>
     
-        // The following constants are defined to make the code more readable only. They should not be changed, unless Unicode is abandoned as an encoding.
-        const CANADIAN_SYLLABICS_E = "\u1401";
-        const CANADIAN_SYLLABICS_I = "\u1403";
-        const CANADIAN_SYLLABICS_O = "\u1405";
-        const CANADIAN_SYLLABICS_A = "\u140A";
-        const CANADIAN_SYLLABICS_II = "\u1404";
-        const CANADIAN_SYLLABICS_OO = "\u1406";
-        const CANADIAN_SYLLABICS_AA = "\u140B";
-        
-        const CANADIAN_SYLLABICS_WEST_CREE_WE = "\u140D";
-        const CANADIAN_SYLLABICS_WEST_CREE_WI = "\u140F";
-        const CANADIAN_SYLLABICS_WEST_CREE_WO = "\u1413";
-        const CANADIAN_SYLLABICS_WEST_CREE_WA = "\u1418";
-        const CANADIAN_SYLLABICS_WEST_CREE_WII = "\u1411";
-        const CANADIAN_SYLLABICS_WEST_CREE_WOO = "\u1415";
-        const CANADIAN_SYLLABICS_WEST_CREE_WAA = "\u141A";
-        const CANADIAN_SYLLABICS_FINAL_RING = "\u1424";
+    // The following constants are defined to make the code more readable only. They should not be changed, unless Unicode is abandoned as an encoding.
+    const CANADIAN_SYLLABICS_E = "\u1401";
+    const CANADIAN_SYLLABICS_I = "\u1403";
+    const CANADIAN_SYLLABICS_O = "\u1405";
+    const CANADIAN_SYLLABICS_A = "\u140A";
+    const CANADIAN_SYLLABICS_II = "\u1404";
+    const CANADIAN_SYLLABICS_OO = "\u1406";
+    const CANADIAN_SYLLABICS_AA = "\u140B";
+
+    const CANADIAN_SYLLABICS_WEST_CREE_WE = "\u140D";
+    const CANADIAN_SYLLABICS_WEST_CREE_WI = "\u140F";
+    const CANADIAN_SYLLABICS_WEST_CREE_WO = "\u1413";
+    const CANADIAN_SYLLABICS_WEST_CREE_WA = "\u1418";
+    const CANADIAN_SYLLABICS_WEST_CREE_WII = "\u1411";
+    const CANADIAN_SYLLABICS_WEST_CREE_WOO = "\u1415";
+    const CANADIAN_SYLLABICS_WEST_CREE_WAA = "\u141A";
+    const CANADIAN_SYLLABICS_FINAL_RING = "\u1424";
 
 
-        const CANADIAN_SYLLABICS_PE  = "\u142F";
-        const CANADIAN_SYLLABICS_PI  = "\u1431";
-        const CANADIAN_SYLLABICS_PO  = "\u1433";
-        const CANADIAN_SYLLABICS_PA  = "\u1438"; 
-        const CANADIAN_SYLLABICS_PII = "\u1432";
-        const CANADIAN_SYLLABICS_POO = "\u1434";
-        const CANADIAN_SYLLABICS_PAA = "\u1439";
-        const CANADIAN_SYLLABICS_WEST_CREE_P = "\u144A";
+    const CANADIAN_SYLLABICS_PE  = "\u142F";
+    const CANADIAN_SYLLABICS_PI  = "\u1431";
+    const CANADIAN_SYLLABICS_PO  = "\u1433";
+    const CANADIAN_SYLLABICS_PA  = "\u1438"; 
+    const CANADIAN_SYLLABICS_PII = "\u1432";
+    const CANADIAN_SYLLABICS_POO = "\u1434";
+    const CANADIAN_SYLLABICS_PAA = "\u1439";
+    const CANADIAN_SYLLABICS_WEST_CREE_P = "\u144A";
 
     const CANADIAN_SYLLABICS_TE = "\u144C";
     const CANADIAN_SYLLABICS_TI = "\u144E";
@@ -865,32 +860,17 @@
 
 
 
-    const canadianSyllabicsModel = [
-        { unicodeChar: "\u1447", unicodeCharName: "CANADIAN SYLLABICS WEST-CREE PWAA",
-          unicodeCharNameCamelCase: "canadianSyllabicsWestCreePwaa",
-          grapheme: {hasNorthDot: true, hasWestWDot: true, orientation: WEST, isSuperscript: false}, 
-          phoneme: {hasLongVowel: true, hasRounding: true, syllableType: "CwV:", vowelQuality: "a", initialConsonant: "p", isFinal: false},
-          asciiRomanization: "pwaa"
-        },
+    let addSomeCharacterFunction = (character) =>
+        (event) => {
+            let textOutput = document.getElementById("textOutput");
+            textOutput.value += character;
+         };
         
-    ]; // Probably should generate this information from some Unicode database to make it easier???, maybe use Prolog or something similar
-    // as a search algorithm 
-
-
-        let addSomeCharacterFunction = (character) =>
-            (event) => {
-                let textOutput = document.getElementById("textOutput");
-                textOutput.value += character;
-            };
-        
-        function setupButtonForWriting(someText, buttonId) {
-            let writingFunction = addSomeCharacterFunction(someText);
-            let theButton = document.getElementById(buttonId);
-            theButton.addEventListener("click", writingFunction);
-        }
-
-        // convert syllable from pa to pwa, ne to nwe, and so on. 
-        // (as a formula: CV to CwV) C means consonant, V means vowel.
+    function setupButtonForWriting(someText, buttonId) {
+        let writingFunction = addSomeCharacterFunction(someText);
+        let theButton = document.getElementById(buttonId);
+        theButton.addEventListener("click", writingFunction);
+    }
 
 
 
