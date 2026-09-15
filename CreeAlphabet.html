@@ -345,6 +345,10 @@
                     <span class="friendlyRomanization">k</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS K (U+1483)</span>
                     </button>
+                    <button id="canadianSyllabicsKwButton" class="eastCree">ᒄ 
+                    <span class="friendlyRomanization">kw</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS KW (U+1484)</span>
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -882,6 +886,9 @@
     const CANADIAN_SYLLABICS_S = "\u1505";
     const CANADIAN_SYLLABICS_TH_CREE_TH = "\u15AE";
     const CANADIAN_SYLLABICS_Y = "\u153E";
+
+    // Special finals used for East Cree:
+    const CANADIAN_SYLLABICS_KW = "\u1484";
     
     // CwV syllables:
     const CANADIAN_SYLLABICS_PWE = "\u143A";
@@ -900,6 +907,7 @@
     const CANADIAN_SYLLABICS_WEST_CREE_PWAA = "\u1447";
 
 
+    // The following character starting at CANADIAN SYLLABICS THE are used in East Cree. See www.EastCree.org for the chart.
     const CANADIAN_SYLLABICS_THE = "\u155E";
     const CANADIAN_SYLLABICS_THWE = "\u18E3";
     const CANADIAN_SYLLABICS_THI = "\u1560";
@@ -995,6 +1003,7 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_KAA, "canadianSyllabicsKaaButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_GRAVE, "canadianSyllabicsFinalGraveButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_K, "canadianSyllabicsKButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_KW, "canadianSyllabicsKwButton");
 
         setupButtonForWriting(CANADIAN_SYLLABICS_CA, "canadianSyllabicsCaButton");
         setupButtonForWriting(CANADIAN_SYLLABICS_CE, "canadianSyllabicsCeButton");
