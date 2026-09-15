@@ -641,6 +641,52 @@
                     </button>
                 </td>
             </tr>
+            <tr class="eastCreeRow">
+                <th>th
+                </th>
+                <td><button id="canadianSyllabicsTheButton">ᕞ 
+                    <span class="friendlyRomanization">the</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THE (U+155E)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThiButton">ᕠ
+                    <span class="friendlyRomanization">thi</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THI (U+1560)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThoButton">ᕤ 
+                    <span class="friendlyRomanization">tho</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THO (U+1564)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThaButton">ᕦ 
+                    <span class="friendlyRomanization">tha</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THA (U+1566)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThiiButton">ᕢ 
+                    <span class="friendlyRomanization">thii</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THII (U+1562)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThooButton">ᕥ 
+                    <span class="friendlyRomanization">thoo</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THOO (U+1565)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThaaButton">ᕧ
+                    <span class="friendlyRomanization">thaa</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS THAA (U+1567)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsThButton">ᕪ 
+                    <span class="friendlyRomanization">th</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS TH (U+156A)</span>
+                    </button>
+                </td>
+            </tr>
+
+
         </tbody>
     </table>
         
@@ -817,7 +863,7 @@
     const CANADIAN_SYLLABICS_FULL_STOP = "\u166E";
 
 
-    // Used for East Cree:
+    // W-initial syllables Used for East Cree:
     const CANADIAN_SYLLABICS_WE = "\u140C";
     const CANADIAN_SYLLABICS_WI = "\u140E";
     const CANADIAN_SYLLABICS_WO = "\u1412";
@@ -854,6 +900,18 @@
     const CANADIAN_SYLLABICS_WEST_CREE_PWAA = "\u1447";
 
 
+    const CANADIAN_SYLLABICS_THE = "\u155E";
+    const CANADIAN_SYLLABICS_THWE = "\u18E3";
+    const CANADIAN_SYLLABICS_THI = "\u1560";
+    const CANADIAN_SYLLABICS_THII = "\u1562";
+    const CANADIAN_SYLLABICS_THO = "\u1564";
+    const CANADIAN_SYLLABICS_THOO = "\u1565";
+    const CANADIAN_SYLLABICS_THA = "\u1566";
+    const CANADIAN_SYLLABICS_THAA = "\u1567";
+    const CANADIAN_SYLLABICS_THWAA = "\u1568";
+    const CANADIAN_SYLLABICS_TH = "\u156A";
+
+
     const NORTH = "north";
     const EAST = "east";
     const SOUTH = "south";
@@ -870,7 +928,11 @@
     function setupButtonForWriting(someText, buttonId) {
         let writingFunction = addSomeCharacterFunction(someText);
         let theButton = document.getElementById(buttonId);
-        theButton.addEventListener("click", writingFunction);
+        if (theButton) {
+            theButton.addEventListener("click", writingFunction);
+        } else {
+            console.warn("Missing Button: " + buttonId);
+        }
     }
 
 
@@ -991,6 +1053,19 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_TH, "canadianSyllabicsThCreeThButton");
 
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_THE, "canadianSyllabicsTheButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THWE, "canadianSyllabicsThweButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THI, "canadianSyllabicsThiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THII, "canadianSyllabicsThiiButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THO, "canadianSyllabicsThoButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THOO, "canadianSyllabicsThooButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THA, "canadianSyllabicsThaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THAA, "canadianSyllabicsThaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_THWAA, "canadianSyllabicsThwaaButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH, "canadianSyllabicsThButton");
+
+
+
 
 
 
@@ -1105,6 +1180,11 @@
                     if (rotatedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
                     }
+                } else if (isThCreeThSyllable(lastChar)) {
+                    let rotatedChar = rotateRightThCreeThSyllable(lastChar);
+                    if (rotatedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
+                    }
                 } else if (isYSyllable(lastChar)) {
                     let rotatedChar = rotateRightYSyllable(lastChar);
                     if (rotatedChar) {
@@ -1179,6 +1259,11 @@
                     }
                 } else if (isThSyllable(lastChar)) {
                     let lengthenedChar = lengthenThSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
+                } else if (isThCreeThSyllable(lastChar)) {
+                    let lengthenedChar = lengthenThCreeThSyllable(lastChar);
                     if (lengthenedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
                     }
@@ -1745,7 +1830,7 @@
         }
 
         
-        function isThSyllable(currentChar) {
+        function isThCreeThSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_TH_CREE_THE
               || currentChar === CANADIAN_SYLLABICS_TH_CREE_THI
               || currentChar === CANADIAN_SYLLABICS_TH_CREE_THO
@@ -1757,7 +1842,7 @@
         }
 
 
-        function rotateRightThSyllable(currentChar) {
+        function rotateRightThCreeThSyllable(currentChar) {
             // syllables with short vowel:
             if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THE) {
                 return CANADIAN_SYLLABICS_TH_CREE_THA;
@@ -1780,7 +1865,7 @@
         }
 
 
-        function lengthenThSyllable(currentChar) {
+        function lengthenThCreeThSyllable(currentChar) {
             if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THE) {
                 return CANADIAN_SYLLABICS_TH_CREE_THE;
             } else if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THA) {
@@ -1843,6 +1928,60 @@
                 console.log("not a recognized character for this function");
             }
         }
+
+
+        
+        function isThSyllable(currentChar) {
+            return currentChar === CANADIAN_SYLLABICS_THE
+              || currentChar === CANADIAN_SYLLABICS_THWE
+              || currentChar === CANADIAN_SYLLABICS_THI
+              || currentChar === CANADIAN_SYLLABICS_THII
+              || currentChar === CANADIAN_SYLLABICS_THO
+              || currentChar === CANADIAN_SYLLABICS_THOO
+              || currentChar === CANADIAN_SYLLABICS_THA
+              || currentChar === CANADIAN_SYLLABICS_THAA
+              || currentChar === CANADIAN_SYLLABICS_THWAA
+              || currentChar === CANADIAN_SYLLABICS_TH;
+        }
+
+
+        function rotateRightThSyllable(currentChar) {
+            // syllables with short vowel:
+            if (currentChar === CANADIAN_SYLLABICS_THE) {
+                return CANADIAN_SYLLABICS_THA;
+            } else if (currentChar === CANADIAN_SYLLABICS_THA) {
+                return CANADIAN_SYLLABICS_THI;
+            } else if (currentChar === CANADIAN_SYLLABICS_THI) {
+                return CANADIAN_SYLLABICS_THO;
+            } else if (currentChar === CANADIAN_SYLLABICS_THO) {
+                return CANADIAN_SYLLABICS_THE;
+            // syllables with long vowel:
+            } else if (currentChar === CANADIAN_SYLLABICS_THAA) {
+                return CANADIAN_SYLLABICS_THII;
+            } else if (currentChar === CANADIAN_SYLLABICS_THII) {
+                return CANADIAN_SYLLABICS_THOO;
+            } else if (currentChar === CANADIAN_SYLLABICS_THOO) {
+                return CANADIAN_SYLLABICS_THAA;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+        function lengthenThSyllable(currentChar) {
+            if (currentChar === CANADIAN_SYLLABICS_THE) {
+                return CANADIAN_SYLLABICS_THE;
+            } else if (currentChar === CANADIAN_SYLLABICS_THA) {
+                return CANADIAN_SYLLABICS_THAA;
+            } else if (currentChar === CANADIAN_SYLLABICS_THI) {
+                return CANADIAN_SYLLABICS_THII;
+            } else if (currentChar === CANADIAN_SYLLABICS_THO) {
+                return CANADIAN_SYLLABICS_THOO;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+
 
         let rotateRightFunction = rotateRightLastCharacterInTextField;
         let rotateRightButton = document.getElementById("rotateRightButton");
