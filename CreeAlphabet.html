@@ -601,6 +601,18 @@
                 <td><button id="carriageReturnLineFeedButton">(New Line) <span class="buttonDebugText">CARRIAGE RETURN (U+000D) LINE FEED (U+000A)</span></button>
                 </td>
             </tr>
+            <tr>
+                <th>punctuation
+                </th>
+                <td><button id="canadianSyllabicsHyphenButton">᐀
+                    <span class="friendlyRomanization">hyphen</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS HYPHEN (U+1400)</span></button>
+                </td>
+                <td><button id="canadianSyllabicsFullStopButton">᙮
+                    <span class="friendlyRomanization">end of sentence</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS FULL STOP (U+166E)</span></button>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -713,6 +725,9 @@
 	const CANADIAN_SYLLABICS_MEDIAL_R = "\u1552";
     const CANADIAN_SYLLABICS_FINAL_DOUBLE_SHORT_VERTICAL_STROKES = "\u1426";
     const CANADIAN_SYLLABICS_HK = "\u157D";
+
+    const CANADIAN_SYLLABICS_HYPHEN = "\u1400";
+    const CANADIAN_SYLLABICS_FULL_STOP = "\u166E";
 
         
     
@@ -1132,6 +1147,16 @@
         let carriageReturnLineFeedFunction = addSomeCharacterFunction("\u000D\u000A");
         let carriageReturnLineFeedButton = document.getElementById("carriageReturnLineFeedButton");
         carriageReturnLineFeedButton.addEventListener("click", carriageReturnLineFeedFunction);
+
+
+        let canadianSyllabicsHyphenFunction = addSomeCharacterFunction("\u1400");
+        let canadianSyllabicsHyphenButton = document.getElementById("canadianSyllabicsHyphenButton");
+        canadianSyllabicsHyphenButton.addEventListener("click", canadianSyllabicsHyphenFunction);
+    
+        let canadianSyllabicsFullStopFunction = addSomeCharacterFunction("\u166E");
+        let canadianSyllabicsFullStopButton = document.getElementById("canadianSyllabicsFullStopButton");
+        canadianSyllabicsFullStopButton.addEventListener("click", canadianSyllabicsFullStopFunction);
+
 
         
         // Advanced functionality: Syllable grapheme rotation
