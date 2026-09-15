@@ -442,6 +442,10 @@
                     <span class="friendlyRomanization">m</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE M (U+14BC)</span>
                     </button>
+                    <button id="canadianSyllabicsMButton" class="eastCree">ᒡ 
+                    <span class="friendlyRomanization">m</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS M (U+14BB)</span>
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -486,6 +490,10 @@
                     <span class="friendlyRomanization">n</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL RIGHT HALF RING (U+1423)</span>
                     </button>
+                    <button id="canadianSyllabicsNButton" class="eastCree">ᓐ 
+                    <span class="friendlyRomanization">n</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS N (U+14D0)</span>
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -529,6 +537,10 @@
                 <td><button id="canadianSyllabicsFinalTopHalfRingButton">ᐢ 
                     <span class="friendlyRomanization">s</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL TOP HALF RING (U+1422)</span>
+                    </button>
+                    <button id="canadianSyllabicsSButton" class="eastCree">ᔅ 
+                    <span class="friendlyRomanization">s</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS S (U+1505)</span>
                     </button>
                 </td>
             </tr>
@@ -575,6 +587,10 @@
                     <span class="friendlyRomanization">th</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WOODS-CREE FINAL TH (U+167E)</span>
                     </button>
+                    <button id="canadianSyllabicsThCreeThButton" class="eastCree">ᖮ 
+                    <span class="friendlyRomanization">th</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS TH-CREE TH (U+15AE)</span>
+                    </button>
                 </td>
             </tr>
 
@@ -619,6 +635,10 @@
                 <td><button id="canadianSyllabicsFinalPlusButton">ᐩ 
                     <span class="friendlyRomanization">y</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL PLUS (U+1429)</span>
+                    </button>
+                    <button id="canadianSyllabicsYButton" class="eastCree">ᔾ 
+                    <span class="friendlyRomanization">y</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS Y (U+153E)</span>
                     </button>
                 </td>
                 <td><button id="canadianSyllabicsYCreeWButton">ᐝ 
@@ -815,6 +835,11 @@
     const CANADIAN_SYLLABICS_T = "\u1466";
     const CANADIAN_SYLLABICS_K = "\u1483";
     const CANADIAN_SYLLABICS_C = "\u14A1";
+    const CANADIAN_SYLLABICS_M = "\u14BB";
+    const CANADIAN_SYLLABICS_N = "\u14D0";
+    const CANADIAN_SYLLABICS_S = "\u1505";
+    const CANADIAN_SYLLABICS_TH_CREE_TH = "\u15AE";
+    const CANADIAN_SYLLABICS_Y = "\u153E";
     
         let addSomeCharacterFunction = (character) =>
             (event) => {
@@ -1038,6 +1063,9 @@
         , "canadianSyllabicsWestCreeMButton");
         
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_M, "canadianSyllabicsMButton");
+
+
 
         setupButtonForWriting(CANADIAN_SYLLABICS_NA
         , "canadianSyllabicsNaButton");
@@ -1063,6 +1091,7 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RIGHT_HALF_RING
         , "canadianSyllabicsFinalRightHalfRingButton");
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_N, "canadianSyllabicsNButton");
 
 
         setupButtonForWriting(CANADIAN_SYLLABICS_SA
@@ -1089,6 +1118,9 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_TOP_HALF_RING
         , "canadianSyllabicsFinalTopHalfRingButton");
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_S, "canadianSyllabicsSButton");
+
+
 
 
 
@@ -1110,6 +1142,7 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THAA, "canadianSyllabicsThCreeThaaButton");
 
         setupButtonForWriting(CANADIAN_SYLLABICS_WOODS_CREE_FINAL_TH, "canadianSyllabicsWoodsCreeFinalThButton");
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_TH, "canadianSyllabicsThCreeThButton");
 
 
 
@@ -1132,7 +1165,8 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_PLUS, "canadianSyllabicsFinalPlusButton");
         
         setupButtonForWriting(CANADIAN_SYLLABICS_Y_CREE_W, "canadianSyllabicsYCreeWButton");
-        
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_Y, "canadianSyllabicsYButton");
 
 
 
