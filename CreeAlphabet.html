@@ -1953,15 +1953,15 @@
         }
 
 
-        function lengthenYSyllable(currentChar) {
-            if (currentChar === CANADIAN_SYLLABICS_YE) {
-                return CANADIAN_SYLLABICS_YE;
-            } else if (currentChar === CANADIAN_SYLLABICS_YA) {
-                return CANADIAN_SYLLABICS_YAA;
-            } else if (currentChar === CANADIAN_SYLLABICS_YI) {
-                return CANADIAN_SYLLABICS_YII;
-            } else if (currentChar === CANADIAN_SYLLABICS_YO) {
-                return CANADIAN_SYLLABICS_YOO;
+        function lengthenThSyllable(currentChar) {
+            if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THE) {
+                return CANADIAN_SYLLABICS_TH_CREE_THE;
+            } else if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THA) {
+                return CANADIAN_SYLLABICS_TH_CREE_THAA;
+            } else if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THI) {
+                return CANADIAN_SYLLABICS_TH_CREE_THII;
+            } else if (currentChar === CANADIAN_SYLLABICS_TH_CREE_THO) {
+                return CANADIAN_SYLLABICS_TH_CREE_THOO;
             } else {
                 console.log("not a recognized character for this function");
             }
