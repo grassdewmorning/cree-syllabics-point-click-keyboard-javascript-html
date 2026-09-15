@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Western Cree Syllabics Point-and-Click Keyboard</title>
+    <title>Cree Syllabics Point-and-Click Keyboard</title>
     <style>
         .buttonDebugText {
             display: none;
@@ -35,6 +35,10 @@
         textarea {
             font-size: 3em;
         }
+
+        .eastCreeRow {
+            background: green;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +55,16 @@
     <button id="rotateRightButton" class="complexAction">Rotate Last Character Rightward ↻</button>
     <button id="lengthenVowelButton" class="complexAction">Lengthen Vowel of Last Character</button>
 
+    <button id="shortenVowelButton" class="complexAction">Shorten Vowel of Last Character</button>
+    <button id="toNorthButton" class="complexAction">Face Last Character North</button>
+    <button id="toEastButton" class="complexAction">Face Last Character East</button>
+    <button id="toSouthButton" class="complexAction">Face Last Character South</button>
+    <button id="toWestButton" class="complexAction">Face Last Character West</button>
+    <button id="centerRightButton" class="complexAction">Think East</button>
+    <button id="centerLeftButton" class="complexAction">Think West</button>
+
+
+    <div id="keyboardArea">
 
     <table>
         <tbody>
@@ -77,7 +91,7 @@
             <tr>
                 <th>-
                 </th>
-                <td><button id="canadianSyllabicsEButton">ᐁ 
+                <td><button id="canadianSyllabicsEButton" typeableText="&#x1401">ᐁ 
                     <span class="friendlyRomanization">e</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS E (U+1401)</span></button>
                 </td>
@@ -157,6 +171,47 @@
                 </td>
             </tr>
 
+            <tr class="eastCreeRow">
+                <th>w
+                </th>
+                <td><button id="canadianSyllabicsWeButton">ᐌ 
+                    <span class="friendlyRomanization">we</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WE (U+140C)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsWiButton">ᐎ 
+                    <span class="friendlyRomanization">wi</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WI (U+140E)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsWoButton">ᐒ 
+                    <span class="friendlyRomanization">wo</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WO (U+1412)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsWaButton">ᐗ 
+                    <span class="friendlyRomanization">wa</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WA (U+1417)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsWiiButton">ᐐ 
+                    <span class="friendlyRomanization">wii</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WII (U+1410)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsWooButton">ᐔ 
+                    <span class="friendlyRomanization">woo</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WOO (U+1414)</span>
+                    </button>
+                </td>
+                <td><button id="canadianSyllabicsWaaButton">ᐙ 
+                    <span class="friendlyRomanization">waa</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS WAA (U+1419)</span>
+                    </button>
+                </td>
+                <td>
+                </td>
+            </tr>
 
             <tr>
                 <th>p
@@ -617,6 +672,7 @@
         </tbody>
     </table>
 
+    </div>
 
     <script>
     
@@ -733,7 +789,17 @@
     const CANADIAN_SYLLABICS_HYPHEN = "\u1400";
     const CANADIAN_SYLLABICS_FULL_STOP = "\u166E";
 
-        
+
+    // Used for East Cree:
+    const CANADIAN_SYLLABICS_WE = "\u140C";
+    const CANADIAN_SYLLABICS_WI = "\u140E";
+    const CANADIAN_SYLLABICS_WO = "\u1412";
+    const CANADIAN_SYLLABICS_WA = "\u1417";
+    const CANADIAN_SYLLABICS_WII = "\u1410";
+    const CANADIAN_SYLLABICS_WOO = "\u1414";
+    const CANADIAN_SYLLABICS_WAA = "\u1419";
+
+
     
         let addSomeCharacterFunction = (character) =>
             (event) => {
@@ -794,6 +860,29 @@
 
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RING
         , "canadianSyllabicsFinalRingButton");
+
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WA
+        , "canadianSyllabicsWaButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WE
+        , "canadianSyllabicsWeButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WI
+        , "canadianSyllabicsWiButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WO
+        , "canadianSyllabicsWoButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WII
+        , "canadianSyllabicsWiiButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WOO
+        , "canadianSyllabicsWooButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_WAA
+        , "canadianSyllabicsWaaButton");
+
 
 
 
