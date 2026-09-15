@@ -711,7 +711,7 @@
     const CANADIAN_SYLLABICS_TH_CREE_THAA = "\u15AD";
     const CANADIAN_SYLLABICS_WOODS_CREE_FINAL_TH = "\u167E";
 
-	const CANADIAN_SYLLABICS_YE = "\u1526";
+    const CANADIAN_SYLLABICS_YE = "\u1526";
     const CANADIAN_SYLLABICS_YI = "\u1528";
     const CANADIAN_SYLLABICS_YO = "\u152A";
     const CANADIAN_SYLLABICS_YA = "\u152D";
@@ -722,9 +722,13 @@
     const CANADIAN_SYLLABICS_Y_CREE_W = "\u141D";
 
     const CANADIAN_SYLLABICS_MEDIAL_L = "\u14EC";
-	const CANADIAN_SYLLABICS_MEDIAL_R = "\u1552";
+    const CANADIAN_SYLLABICS_MEDIAL_R = "\u1552";
     const CANADIAN_SYLLABICS_FINAL_DOUBLE_SHORT_VERTICAL_STROKES = "\u1426";
     const CANADIAN_SYLLABICS_HK = "\u157D";
+
+    const SPACE = "\u0020";
+    const CARRIAGE_RETURN = "\u000D";
+    const LINE_FEED = "\u000A";
 
     const CANADIAN_SYLLABICS_HYPHEN = "\u1400";
     const CANADIAN_SYLLABICS_FULL_STOP = "\u166E";
@@ -737,425 +741,310 @@
                 textOutput.value += character;
             };
         
+        function setupButtonForWriting(someText, buttonId) {
+            let writingFunction = addSomeCharacterFunction(someText);
+            let theButton = document.getElementById(buttonId);
+            theButton.addEventListener("click", writingFunction);
+        }
 
-        let addEFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_E);
-        let eButton = document.getElementById("canadianSyllabicsEButton");
-        eButton.addEventListener("click", addEFunction);
-
-
-        let addIFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_I);
-        let iButton = document.getElementById("canadianSyllabicsIButton");
-        iButton.addEventListener("click", addIFunction);
-
-        let addOFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_O);
-        let oButton = document.getElementById("canadianSyllabicsOButton");
-        oButton.addEventListener("click", addOFunction);
-
-        let addAFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_A);
-        let aButton = document.getElementById("canadianSyllabicsAButton");
-        aButton.addEventListener("click", addAFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_E, "canadianSyllabicsEButton");
 
 
-        let addIiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_II);
-        let iiButton = document.getElementById("canadianSyllabicsIiButton");
-        iiButton.addEventListener("click", addIiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_I
+        , "canadianSyllabicsIButton");
 
-        let addOoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_OO);
-        let ooButton = document.getElementById("canadianSyllabicsOoButton");
-        ooButton.addEventListener("click", addOoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_O
+        , "canadianSyllabicsOButton");
 
-        let addAaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_AA);
-        let aaButton = document.getElementById("canadianSyllabicsAaButton");
-        aaButton.addEventListener("click", addAaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_A
+        , "canadianSyllabicsAButton");
+
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_II
+        , "canadianSyllabicsIiButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_OO
+        , "canadianSyllabicsOoButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_AA
+        , "canadianSyllabicsAaButton");
 
 
 
-        let addWaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WA);
-        let waButton = document.getElementById("canadianSyllabicsWestCreeWaButton");
-        waButton.addEventListener("click", addWaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WA
+        , "canadianSyllabicsWestCreeWaButton");
 
-        let addWeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WE);
-        let weButton = document.getElementById("canadianSyllabicsWestCreeWeButton");
-        weButton.addEventListener("click", addWeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WE
+        , "canadianSyllabicsWestCreeWeButton");
 
-        let addWiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WI);
-        let wiButton = document.getElementById("canadianSyllabicsWestCreeWiButton");
-        wiButton.addEventListener("click", addWiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WI
+        , "canadianSyllabicsWestCreeWiButton");
 
-        let addWoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WO);
-        let woButton = document.getElementById("canadianSyllabicsWestCreeWoButton");
-        woButton.addEventListener("click", addWoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WO
+        , "canadianSyllabicsWestCreeWoButton");
 
-        let addWiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WII);
-        let wiiButton = document.getElementById("canadianSyllabicsWestCreeWiiButton");
-        wiiButton.addEventListener("click", addWiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WII
+        , "canadianSyllabicsWestCreeWiiButton");
 
-        let addWooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WOO);
-        let wooButton = document.getElementById("canadianSyllabicsWestCreeWooButton");
-        wooButton.addEventListener("click", addWooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WOO
+        , "canadianSyllabicsWestCreeWooButton");
 
-        let addWaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_WAA);
-        let waaButton = document.getElementById("canadianSyllabicsWestCreeWaaButton");
-        waaButton.addEventListener("click", addWaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_WAA
+        , "canadianSyllabicsWestCreeWaaButton");
 
-        let addFinalRingFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_RING);
-        let finalRingButton = document.getElementById("canadianSyllabicsFinalRingButton");
-        finalRingButton.addEventListener("click", addFinalRingFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RING
+        , "canadianSyllabicsFinalRingButton");
 
 
 
-        let addPaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_PA);
-        let paButton = document.getElementById("canadianSyllabicsPaButton");
-        paButton.addEventListener("click", addPaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_PA
+        , "canadianSyllabicsPaButton");
 
-        let addPeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_PE);
-        let peButton = document.getElementById("canadianSyllabicsPeButton");
-        peButton.addEventListener("click", addPeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_PE
+        , "canadianSyllabicsPeButton");
 
-        let addPiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_PI);
-        let piButton = document.getElementById("canadianSyllabicsPiButton");
-        piButton.addEventListener("click", addPiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_PI
+        , "canadianSyllabicsPiButton");
 
-        let addPoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_PO);
-        let poButton = document.getElementById("canadianSyllabicsPoButton");
-        poButton.addEventListener("click", addPoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_PO
+        , "canadianSyllabicsPoButton");
 
-        let addPiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_PII);
-        let piiButton = document.getElementById("canadianSyllabicsPiiButton");
-        piiButton.addEventListener("click", addPiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_PII
+        , "canadianSyllabicsPiiButton");
 
-        let addPooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_POO);
-        let pooButton = document.getElementById("canadianSyllabicsPooButton");
-        pooButton.addEventListener("click", addPooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_POO
+        , "canadianSyllabicsPooButton");
 
-        let addPaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_PAA);
-        let paaButton = document.getElementById("canadianSyllabicsPaaButton");
-        paaButton.addEventListener("click", addPaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_PAA
+        , "canadianSyllabicsPaaButton");
 
-        let addWestCreePFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_P);
-        let westCreePButton = document.getElementById("canadianSyllabicsWestCreePButton");
-        westCreePButton.addEventListener("click", addWestCreePFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_P
+        , "canadianSyllabicsWestCreePButton");
 
 
 
-        let addTaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TA);
-        let taButton = document.getElementById("canadianSyllabicsTaButton");
-        taButton.addEventListener("click", addTaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TA
+        , "canadianSyllabicsTaButton");
 
-        let addTeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TE);
-        let teButton = document.getElementById("canadianSyllabicsTeButton");
-        teButton.addEventListener("click", addTeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TE
+        , "canadianSyllabicsTeButton");
 
-        let addTiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TI);
-        let tiButton = document.getElementById("canadianSyllabicsTiButton");
-        tiButton.addEventListener("click", addTiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TI
+        , "canadianSyllabicsTiButton");
 
-        let addToFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TO);
-        let toButton = document.getElementById("canadianSyllabicsToButton");
-        toButton.addEventListener("click", addToFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TO
+        , "canadianSyllabicsToButton");
 
-        let addTiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TII);
-        let tiiButton = document.getElementById("canadianSyllabicsTiiButton");
-        tiiButton.addEventListener("click", addTiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TII
+        , "canadianSyllabicsTiiButton");
 
-        let addTooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TOO);
-        let tooButton = document.getElementById("canadianSyllabicsTooButton");
-        tooButton.addEventListener("click", addTooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TOO
+        , "canadianSyllabicsTooButton");
         
-        let addTaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TAA);
-        let taaButton = document.getElementById("canadianSyllabicsTaaButton");
-        taaButton.addEventListener("click", addTaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TAA
+        , "canadianSyllabicsTaaButton");
         
-        let addFinalAcuteFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_ACUTE);
-        let finalAcuteButton = document.getElementById("canadianSyllabicsFinalAcuteButton");
-        finalAcuteButton.addEventListener("click", addFinalAcuteFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_ACUTE
+        , "canadianSyllabicsFinalAcuteButton");
 
 
 
 
-        let addKaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KA);
-        let kaButton = document.getElementById("canadianSyllabicsKaButton");
-        kaButton.addEventListener("click", addKaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KA
+        , "canadianSyllabicsKaButton");
 
-        let addKeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KE);
-        let keButton = document.getElementById("canadianSyllabicsKeButton");
-        keButton.addEventListener("click", addKeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KE
+        , "canadianSyllabicsKeButton");
 
-        let addKiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KI);
-        let kiButton = document.getElementById("canadianSyllabicsKiButton");
-        kiButton.addEventListener("click", addKiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KI
+        , "canadianSyllabicsKiButton");
 
-        let addKoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KO);
-        let koButton = document.getElementById("canadianSyllabicsKoButton");
-        koButton.addEventListener("click", addKoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KO
+        , "canadianSyllabicsKoButton");
 
-        let addKiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KII);
-        let kiiButton = document.getElementById("canadianSyllabicsKiiButton");
-        kiiButton.addEventListener("click", addKiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KII
+        , "canadianSyllabicsKiiButton");
 
-        let addKooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KOO);
-        let kooButton = document.getElementById("canadianSyllabicsKooButton");
-        kooButton.addEventListener("click", addKooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KOO
+        , "canadianSyllabicsKooButton");
         
-        let addKaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_KAA);
-        let kaaButton = document.getElementById("canadianSyllabicsKaaButton");
-        kaaButton.addEventListener("click", addKaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_KAA
+        , "canadianSyllabicsKaaButton");
         
-        let addFinalGraveFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_GRAVE);
-        let finalGraveButton = document.getElementById("canadianSyllabicsFinalGraveButton");
-        finalGraveButton.addEventListener("click", addFinalGraveFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_GRAVE
+        , "canadianSyllabicsFinalGraveButton");
 
 
 
-        let addCaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_CA);
-        let caButton = document.getElementById("canadianSyllabicsCaButton");
-        caButton.addEventListener("click", addCaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_CA
+        , "canadianSyllabicsCaButton");
 
-        let addCeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_CE);
-        let ceButton = document.getElementById("canadianSyllabicsCeButton");
-        ceButton.addEventListener("click", addCeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_CE
+        , "canadianSyllabicsCeButton");
 
-        let addCiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_CI);
-        let ciButton = document.getElementById("canadianSyllabicsCiButton");
-        ciButton.addEventListener("click", addCiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_CI
+        , "canadianSyllabicsCiButton");
 
-        let addCoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_CO);
-        let coButton = document.getElementById("canadianSyllabicsCoButton");
-        coButton.addEventListener("click", addCoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_CO
+        , "canadianSyllabicsCoButton");
 
-        let addCiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_CII);
-        let ciiButton = document.getElementById("canadianSyllabicsCiiButton");
-        ciiButton.addEventListener("click", addCiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_CII
+        , "canadianSyllabicsCiiButton");
 
-        let addCooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_COO);
-        let cooButton = document.getElementById("canadianSyllabicsCooButton");
-        cooButton.addEventListener("click", addCooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_COO
+        , "canadianSyllabicsCooButton");
         
-        let addCaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_CAA);
-        let caaButton = document.getElementById("canadianSyllabicsCaaButton");
-        caaButton.addEventListener("click", addCaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_CAA
+        , "canadianSyllabicsCaaButton");
         
         
-        let addFinalShortHorizontalStrokeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE);
-        let finalShortHorizontalStrokeButton = document.getElementById("canadianSyllabicsFinalShortHorizontalStrokeButton");
-        finalShortHorizontalStrokeButton.addEventListener("click", addFinalShortHorizontalStrokeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE
+        , "canadianSyllabicsFinalShortHorizontalStrokeButton");
 
 
 
 
-        let addMaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MA);
-        let maButton = document.getElementById("canadianSyllabicsMaButton");
-        maButton.addEventListener("click", addMaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MA
+        , "canadianSyllabicsMaButton");
 
-        let addMeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_ME);
-        let meButton = document.getElementById("canadianSyllabicsMeButton");
-        meButton.addEventListener("click", addMeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_ME
+        , "canadianSyllabicsMeButton");
 
-        let addMiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MI);
-        let miButton = document.getElementById("canadianSyllabicsMiButton");
-        miButton.addEventListener("click", addMiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MI
+        , "canadianSyllabicsMiButton");
 
-        let addMoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MO);
-        let moButton = document.getElementById("canadianSyllabicsMoButton");
-        moButton.addEventListener("click", addMoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MO
+        , "canadianSyllabicsMoButton");
 
 
-        let addMiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MII);
-        let miiButton = document.getElementById("canadianSyllabicsMiiButton");
-        miiButton.addEventListener("click", addMiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MII
+        , "canadianSyllabicsMiiButton");
 
-        let addMooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MOO);
-        let mooButton = document.getElementById("canadianSyllabicsMooButton");
-        mooButton.addEventListener("click", addMooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MOO
+        , "canadianSyllabicsMooButton");
         
-        let addMaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MAA);
-        let maaButton = document.getElementById("canadianSyllabicsMaaButton");
-        maaButton.addEventListener("click", addMaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MAA
+        , "canadianSyllabicsMaaButton");
 
-        let addWestCreeMFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WEST_CREE_M);
-        let westCreeMButton = document.getElementById("canadianSyllabicsWestCreeMButton");
-        westCreeMButton.addEventListener("click", addWestCreeMFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_M
+        , "canadianSyllabicsWestCreeMButton");
         
 
 
-        let addNaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NA);
-        let naButton = document.getElementById("canadianSyllabicsNaButton");
-        naButton.addEventListener("click", addNaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NA
+        , "canadianSyllabicsNaButton");
 
-        let addNeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NE);
-        let neButton = document.getElementById("canadianSyllabicsNeButton");
-        neButton.addEventListener("click", addNeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NE
+        , "canadianSyllabicsNeButton");
 
-        let addNiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NI);
-        let niButton = document.getElementById("canadianSyllabicsNiButton");
-        niButton.addEventListener("click", addNiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NI
+        , "canadianSyllabicsNiButton");
 
-        let addNoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NO);
-        let noButton = document.getElementById("canadianSyllabicsNoButton");
-        noButton.addEventListener("click", addNoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NO
+        , "canadianSyllabicsNoButton");
 
-        let addNiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NII);
-        let niiButton = document.getElementById("canadianSyllabicsNiiButton");
-        niiButton.addEventListener("click", addNiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NII
+        , "canadianSyllabicsNiiButton");
 
-        let addNooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NOO);
-        let nooButton = document.getElementById("canadianSyllabicsNooButton");
-        nooButton.addEventListener("click", addNooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NOO
+        , "canadianSyllabicsNooButton");
         
-        let addNaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_NAA);
-        let naaButton = document.getElementById("canadianSyllabicsNaaButton");
-        naaButton.addEventListener("click", addNaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_NAA
+        , "canadianSyllabicsNaaButton");
 
-        let addFinalRightHalfRingFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_RIGHT_HALF_RING);
-        let finalRightHalfRingButton = document.getElementById("canadianSyllabicsFinalRightHalfRingButton");
-        finalRightHalfRingButton.addEventListener("click", addFinalRightHalfRingFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_RIGHT_HALF_RING
+        , "canadianSyllabicsFinalRightHalfRingButton");
 
 
 
-        let addSaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SA);
-        let saButton = document.getElementById("canadianSyllabicsSaButton");
-        saButton.addEventListener("click", addSaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SA
+        , "canadianSyllabicsSaButton");
 
-        let addSeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SE);
-        let seButton = document.getElementById("canadianSyllabicsSeButton");
-        seButton.addEventListener("click", addSeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SE
+        , "canadianSyllabicsSeButton");
 
-        let addSiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SI);
-        let siButton = document.getElementById("canadianSyllabicsSiButton");
-        siButton.addEventListener("click", addSiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SI
+        , "canadianSyllabicsSiButton");
 
-        let addSoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SO);
-        let soButton = document.getElementById("canadianSyllabicsSoButton");
-        soButton.addEventListener("click", addSoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SO
+        , "canadianSyllabicsSoButton");
 
-        let addSiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SII);
-        let siiButton = document.getElementById("canadianSyllabicsSiiButton");
-        siiButton.addEventListener("click", addSiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SII
+        , "canadianSyllabicsSiiButton");
 
-        let addSooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SOO);
-        let sooButton = document.getElementById("canadianSyllabicsSooButton");
-        sooButton.addEventListener("click", addSooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SOO
+        , "canadianSyllabicsSooButton");
         
-        let addSaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_SAA);
-        let saaButton = document.getElementById("canadianSyllabicsSaaButton");
-        saaButton.addEventListener("click", addSaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_SAA
+        , "canadianSyllabicsSaaButton");
 
-        let addFinalTopHalfRingFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_TOP_HALF_RING);
-        let finalTopHalfRingButton = document.getElementById("canadianSyllabicsFinalTopHalfRingButton");
-        finalTopHalfRingButton.addEventListener("click", addFinalTopHalfRingFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_TOP_HALF_RING
+        , "canadianSyllabicsFinalTopHalfRingButton");
 
 
 
 
 
-        let addThCreeThaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THA);
-        let thCreeThaButton = document.getElementById("canadianSyllabicsThCreeThaButton");
-        thCreeThaButton.addEventListener("click", addThCreeThaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THA
+        , "canadianSyllabicsThCreeThaButton");
 
-        let addThCreeTheFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THE);
-        let theCreeTheButton = document.getElementById("canadianSyllabicsThCreeTheButton");
-        theCreeTheButton.addEventListener("click", addThCreeTheFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THE
+        , "canadianSyllabicsThCreeTheButton");
 
-        let addThCreeThiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THI);
-        let thCreeThiButton = document.getElementById("canadianSyllabicsThCreeThiButton");
-        thCreeThiButton.addEventListener("click", addThCreeThiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THI, "canadianSyllabicsThCreeThiButton");
 
-        let addThCreeThoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THO);
-        let thCreeThoButton = document.getElementById("canadianSyllabicsThCreeThoButton");
-        thCreeThoButton.addEventListener("click", addThCreeThoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THO, "canadianSyllabicsThCreeThoButton");
 
-        let addThCreeThiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THII);
-        let thCreeThiiButton = document.getElementById("canadianSyllabicsThCreeThiiButton");
-        thCreeThiiButton.addEventListener("click", addThCreeThiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THII, "canadianSyllabicsThCreeThiiButton");
 
-        let addThCreeThooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THOO);
-        let thCreeThooButton = document.getElementById("canadianSyllabicsThCreeThooButton");
-        thCreeThooButton.addEventListener("click", addThCreeThooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THOO, "canadianSyllabicsThCreeThooButton");
         
-        let addThCreeThaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_TH_CREE_THAA);
-        let thCreeThaaButton = document.getElementById("canadianSyllabicsThCreeThaaButton");
-        thCreeThaaButton.addEventListener("click", addThCreeThaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_TH_CREE_THAA, "canadianSyllabicsThCreeThaaButton");
 
-        let addWoodsCreeFinalThFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_WOODS_CREE_FINAL_TH);
-        let woodsCreeFinalThButton = document.getElementById("canadianSyllabicsWoodsCreeFinalThButton");
-        woodsCreeFinalThButton.addEventListener("click", addWoodsCreeFinalThFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_WOODS_CREE_FINAL_TH, "canadianSyllabicsWoodsCreeFinalThButton");
 
 
 
 
 
-        let addYaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YA);
-        let yaButton = document.getElementById("canadianSyllabicsYaButton");
-        yaButton.addEventListener("click", addYaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YA, "canadianSyllabicsYaButton");
 
-        let addYeFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YE);
-        let yeButton = document.getElementById("canadianSyllabicsYeButton");
-        yeButton.addEventListener("click", addYeFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YE, "canadianSyllabicsYeButton");
 
-        let addYiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YI);
-        let yiButton = document.getElementById("canadianSyllabicsYiButton");
-        yiButton.addEventListener("click", addYiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YI, "canadianSyllabicsYiButton");
 
-        let addYoFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YO);
-        let yoButton = document.getElementById("canadianSyllabicsYoButton");
-        yoButton.addEventListener("click", addYoFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YO, "canadianSyllabicsYoButton");
 
-        let addYiiFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YII);
-        let yiiButton = document.getElementById("canadianSyllabicsYiiButton");
-        yiiButton.addEventListener("click", addYiiFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YII, "canadianSyllabicsYiiButton");
 
-        let addYooFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YOO);
-        let yooButton = document.getElementById("canadianSyllabicsYooButton");
-        yooButton.addEventListener("click", addYooFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YOO, "canadianSyllabicsYooButton");
         
-        let addYaaFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_YAA);
-        let yaaButton = document.getElementById("canadianSyllabicsYaaButton");
-        yaaButton.addEventListener("click", addYaaFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_YAA, "canadianSyllabicsYaaButton");
 
-        let addFinalPlusFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_PLUS);
-        let finalPlusButton = document.getElementById("canadianSyllabicsFinalPlusButton");
-        finalPlusButton.addEventListener("click", addFinalPlusFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_PLUS, "canadianSyllabicsFinalPlusButton");
         
-        let addYCreeWFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_Y_CREE_W);
-        let yCreeWButton = document.getElementById("canadianSyllabicsYCreeWButton");
-        yCreeWButton.addEventListener("click", addYCreeWFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_Y_CREE_W, "canadianSyllabicsYCreeWButton");
         
 
 
 
-        let addMedialLFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MEDIAL_L);
-        let medialLButton = document.getElementById("canadianSyllabicsMedialLButton");
-        medialLButton.addEventListener("click", addMedialLFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MEDIAL_L, "canadianSyllabicsMedialLButton");
 
-        let addMedialRFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_MEDIAL_R);
-        let medialRButton = document.getElementById("canadianSyllabicsMedialRButton");
-        medialRButton.addEventListener("click", addMedialRFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_MEDIAL_R, "canadianSyllabicsMedialRButton");
 
-        let addFinalDoubleShortVerticalStrokesFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_FINAL_DOUBLE_SHORT_VERTICAL_STROKES);
-        let finalDoubleShortVerticalStrokesButton = document.getElementById("canadianSyllabicsFinalDoubleShortVerticalStrokesButton");
-        finalDoubleShortVerticalStrokesButton.addEventListener("click", addFinalDoubleShortVerticalStrokesFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_DOUBLE_SHORT_VERTICAL_STROKES, "canadianSyllabicsFinalDoubleShortVerticalStrokesButton");
 
-        let addHkFunction = addSomeCharacterFunction(CANADIAN_SYLLABICS_HK);
-        let hkButton = document.getElementById("canadianSyllabicsHkButton");
-        hkButton.addEventListener("click", addHkFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_HK, "canadianSyllabicsHkButton");
 
-        let addSpaceFunction = addSomeCharacterFunction("\u0020");
-        let spaceButton = document.getElementById("spaceButton");
-        spaceButton.addEventListener("click", addSpaceFunction);
+        setupButtonForWriting(SPACE, "spaceButton");
         
 
-        let carriageReturnLineFeedFunction = addSomeCharacterFunction("\u000D\u000A");
-        let carriageReturnLineFeedButton = document.getElementById("carriageReturnLineFeedButton");
-        carriageReturnLineFeedButton.addEventListener("click", carriageReturnLineFeedFunction);
+        setupButtonForWriting(CARRIAGE_RETURN + LINE_FEED, "carriageReturnLineFeedButton");
 
 
-        let canadianSyllabicsHyphenFunction = addSomeCharacterFunction("\u1400");
-        let canadianSyllabicsHyphenButton = document.getElementById("canadianSyllabicsHyphenButton");
-        canadianSyllabicsHyphenButton.addEventListener("click", canadianSyllabicsHyphenFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_HYPHEN, "canadianSyllabicsHyphenButton");
     
-        let canadianSyllabicsFullStopFunction = addSomeCharacterFunction("\u166E");
-        let canadianSyllabicsFullStopButton = document.getElementById("canadianSyllabicsFullStopButton");
-        canadianSyllabicsFullStopButton.addEventListener("click", canadianSyllabicsFullStopFunction);
+        setupButtonForWriting(CANADIAN_SYLLABICS_FULL_STOP, "canadianSyllabicsFullStopButton");
 
 
         
