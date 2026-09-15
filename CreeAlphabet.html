@@ -841,6 +841,42 @@
     const CANADIAN_SYLLABICS_TH_CREE_TH = "\u15AE";
     const CANADIAN_SYLLABICS_Y = "\u153E";
     
+    // CwV syllables:
+    const CANADIAN_SYLLABICS_PWE = "\u143A";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWE = "\u143B";
+    const CANADIAN_SYLLABICS_PWI = "\u143C";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWI = "\u143D";
+    const CANADIAN_SYLLABICS_PWII = "\u143E";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWII = "\u143F";
+    const CANADIAN_SYLLABICS_PWO = "\u1440";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWO = "\u1441";
+    const CANADIAN_SYLLABICS_PWOO = "\u1442";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWOO = "\u1443";
+    const CANADIAN_SYLLABICS_PWA = "\u1444";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWA = "\u1445";
+    const CANADIAN_SYLLABICS_PWAA = "\u1446";
+    const CANADIAN_SYLLABICS_WEST_CREE_PWAA = "\u1447";
+
+
+    const NORTH = "north";
+    const EAST = "east";
+    const SOUTH = "south";
+    const WEST = "west"
+
+
+
+    const canadianSyllabicsModel = [
+        { unicodeChar: "\u1447", unicodeCharName: "CANADIAN SYLLABICS WEST-CREE PWAA",
+          unicodeCharNameCamelCase: "canadianSyllabicsWestCreePwaa",
+          grapheme: {hasNorthDot: true, hasWestWDot: true, orientation: WEST, isSuperscript: false}, 
+          phoneme: {hasLongVowel: true, hasRounding: true, syllableType: "CwV:", vowelQuality: "a", initialConsonant: "p", isFinal: false},
+          asciiRomanization: "pwaa"
+        },
+        
+    ]; // Probably should generate this information from some Unicode database to make it easier???, maybe use Prolog or something similar
+    // as a search algorithm 
+
+
         let addSomeCharacterFunction = (character) =>
             (event) => {
                 let textOutput = document.getElementById("textOutput");
@@ -852,6 +888,12 @@
             let theButton = document.getElementById(buttonId);
             theButton.addEventListener("click", writingFunction);
         }
+
+        // convert syllable from pa to pwa, ne to nwe, and so on. 
+        // (as a formula: CV to CwV) C means consonant, V means vowel.
+
+
+
 
         setupButtonForWriting(CANADIAN_SYLLABICS_E, "canadianSyllabicsEButton");
 
@@ -1349,6 +1391,28 @@
         }
 
 
+        let addRoundingToFirstConsonantSoundInWestCreeWayOfLastCharacterInTextField = (event) => {
+            let textOutput = document.getElementById("textOutput");
+            let textOutputInitialValue = textOutput.value;
+            if (textOutputInitialValue) {
+                let valueLength = textOutputInitialValue.length;
+                if (valueLength < 1) {
+                    return; // There is no character to rotate. Nothing to do here.
+                }
+                let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
+                if (isPSyllable(lastChar)) {
+                    let lengthenedChar = lengthenPSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
+                }
+                else {
+                    console.log("cannot lengthen the last character");
+                }
+            }
+        }
+
+
         function isNonConsonantInitialSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_E
               || currentChar === CANADIAN_SYLLABICS_I
@@ -1536,6 +1600,42 @@
                 console.log("not a recognized character for this function");
             }
         }
+
+
+        function insertWestCreeWDiacriticPSyllable(character) {
+            if (character === CANADIAN_SYLLABICS_PE) {
+                return CANADIAN_SYLLABICS_WEST_CREE_PWE;
+            } else if (character === CANADIAN_SYLLABICS_PI) {
+                return CANADIAN_SYLLABICS_WEST_CREE_PWI;
+            } else if (character === CANADIAN_SYLLABICS_PII) {
+                return CANADIAN_SYLLABICS_WEST_CREE_PWII;
+            } else if (character === CANADIAN_SYLLABICS_PO) {
+                return CANADIAN_SYLLABICS_WEST_CREE_PWO;
+            } else if (character === CANADIAN_SYLLABICS_POO) {
+                return CANADIAN_SYLLABICS_WEST_CREE_PWOO;
+            } else if (character === CANADIAN_SYLLABICS_PA) {
+                return CANADIAN_SYLLABICS_WEST_CREE_PWA;
+            }
+        }
+
+        function insertEastCreeWDiacriticPSyllable(character) {
+            if (character === CANADIAN_SYLLABICS_PE) {
+                return CANADIAN_SYLLABICS_PWE;
+            } else if (character === CANADIAN_SYLLABICS_PI) {
+                return CANADIAN_SYLLABICS_PWI;
+            } else if (character === CANADIAN_SYLLABICS_PII) {
+                return CANADIAN_SYLLABICS_PWII;
+            } else if (character === CANADIAN_SYLLABICS_PO) {
+                return CANADIAN_SYLLABICS_PWO;
+            } else if (character === CANADIAN_SYLLABICS_POO) {
+                return CANADIAN_SYLLABICS_PWOO;
+            } else if (character === CANADIAN_SYLLABICS_PA) {
+                return CANADIAN_SYLLABICS_PWA;
+            } else if (character === CANADIAN_SYLLABICS_PAA) {
+                return CANADIAN_SYLLABICS_PWAA;
+            }
+        }
+
 
         function isTSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_TE
