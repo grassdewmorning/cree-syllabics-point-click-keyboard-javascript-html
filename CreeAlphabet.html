@@ -37,7 +37,11 @@
         }
 
         .eastCreeRow {
-            background: green;
+            background: blue;
+        }
+
+        .eastCree {
+            border-color: blue;
         }
     </style>
 </head>
@@ -255,6 +259,10 @@
                     <span class="friendlyRomanization">p</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS WEST-CREE P (U+144A)</span>
                     </button>
+                    <button id="canadianSyllabicsPButton" class="eastCree">ᑉ 
+                    <span class="friendlyRomanization">p</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS P (U+1449)</span>
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -298,6 +306,10 @@
                 <td><button id="canadianSyllabicsFinalAcuteButton">ᐟ 
                     <span class="friendlyRomanization">t</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL ACUTE (U+141F)</span>
+                    </button>
+                    <button id="canadianSyllabicsTButton" class="eastCree">ᑦ 
+                    <span class="friendlyRomanization">t</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS T (U+1466)</span>
                     </button>
                 </td>
             </tr>
@@ -343,6 +355,10 @@
                     <span class="friendlyRomanization">k</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL GRAVE (U+1420)</span>
                     </button>
+                    <button id="canadianSyllabicsKButton" class="eastCree">ᒃ 
+                    <span class="friendlyRomanization">k</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS K (U+1483)</span>
+                    </button>
                 </td>
             </tr>
             <tr>
@@ -386,6 +402,10 @@
                 <td><button id="canadianSyllabicsFinalShortHorizontalStrokeButton">ᐨ 
                     <span class="friendlyRomanization">c</span>
                     <span class="buttonDebugText">CANADIAN SYLLABICS FINAL SHORT HORIZONTAL STROKE (U+1428)</span>
+                    </button>
+                    <button id="canadianSyllabicsCButton">ᒡ 
+                    <span class="friendlyRomanization">c</span>
+                    <span class="buttonDebugText">CANADIAN SYLLABICS C (U+14A1)</span>
                     </button>
                 </td>
             </tr>
@@ -799,7 +819,11 @@
     const CANADIAN_SYLLABICS_WOO = "\u1414";
     const CANADIAN_SYLLABICS_WAA = "\u1419";
 
-
+    // Finals used for East Cree:
+    const CANADIAN_SYLLABICS_P = "\u1449";
+    const CANADIAN_SYLLABICS_T = "\u1466";
+    const CANADIAN_SYLLABICS_K = "\u1483";
+    const CANADIAN_SYLLABICS_C = "\u14A1";
     
         let addSomeCharacterFunction = (character) =>
             (event) => {
@@ -885,7 +909,6 @@
 
 
 
-
         setupButtonForWriting(CANADIAN_SYLLABICS_PA
         , "canadianSyllabicsPaButton");
 
@@ -910,6 +933,7 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_WEST_CREE_P
         , "canadianSyllabicsWestCreePButton");
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_P, "canadianSyllabicsPButton");
 
 
         setupButtonForWriting(CANADIAN_SYLLABICS_TA
@@ -936,6 +960,7 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_ACUTE
         , "canadianSyllabicsFinalAcuteButton");
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_T, "canadianSyllabicsTButton");
 
 
 
@@ -963,6 +988,7 @@
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_GRAVE
         , "canadianSyllabicsFinalGraveButton");
 
+        setupButtonForWriting(CANADIAN_SYLLABICS_K, "canadianSyllabicsKButton");
 
 
         setupButtonForWriting(CANADIAN_SYLLABICS_CA
@@ -989,6 +1015,8 @@
         
         setupButtonForWriting(CANADIAN_SYLLABICS_FINAL_SHORT_HORIZONTAL_STROKE
         , "canadianSyllabicsFinalShortHorizontalStrokeButton");
+
+        setupButtonForWriting(CANADIAN_SYLLABICS_C, "canadianSyllabicsCButton");
 
 
 
@@ -1153,8 +1181,13 @@
                     if (rotatedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
                     }
-                } if (isWSyllable(lastChar)) {
-                    let rotatedChar = rotateRightWSyllable(lastChar);
+                } if (isWWestSyllable(lastChar)) {
+                    let rotatedChar = rotateRightWWestSyllable(lastChar);
+                    if (rotatedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
+                    }
+                } if (isWEastSyllable(lastChar)) {
+                    let rotatedChar = rotateRightWEastSyllable(lastChar);
                     if (rotatedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + rotatedChar;
                     }
@@ -1225,8 +1258,13 @@
                     if (lengthenedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
                     }
-                } if (isWSyllable(lastChar)) {
-                    let lengthenedChar = lengthenWSyllable(lastChar);
+                } if (isWWestSyllable(lastChar)) {
+                    let lengthenedChar = lengthenWWestSyllable(lastChar);
+                    if (lengthenedChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    }
+                } if (isWEastSyllable(lastChar)) {
+                    let lengthenedChar = lengthenWEastSyllable(lastChar);
                     if (lengthenedChar) {
                         textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
                     }
@@ -1328,7 +1366,7 @@
         }
 
 
-        function isWSyllable(currentChar) {
+        function isWWestSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE
               || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WI
               || currentChar === CANADIAN_SYLLABICS_WEST_CREE_WO
@@ -1339,7 +1377,7 @@
         }
 
         
-        function rotateRightWSyllable(currentChar) {
+        function rotateRightWWestSyllable(currentChar) {
             // syllables with short vowel:
             if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE) {
                 return CANADIAN_SYLLABICS_WEST_CREE_WA;
@@ -1361,7 +1399,7 @@
             }
         }
 
-        function lengthenWSyllable(currentChar) {
+        function lengthenWWestSyllable(currentChar) {
             if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE) {
                 return CANADIAN_SYLLABICS_WEST_CREE_WE;
             } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WA) {
@@ -1374,7 +1412,55 @@
                 console.log("not a recognized character for this function");
             }
         }
+
+
+        function isWEastSyllable(currentChar) {
+            return currentChar === CANADIAN_SYLLABICS_WE
+              || currentChar === CANADIAN_SYLLABICS_WI
+              || currentChar === CANADIAN_SYLLABICS_WO
+              || currentChar === CANADIAN_SYLLABICS_WA
+              || currentChar === CANADIAN_SYLLABICS_WII
+              || currentChar === CANADIAN_SYLLABICS_WOO
+              || currentChar === CANADIAN_SYLLABICS_WAA;
+        }
+
         
+        function rotateRightWEastSyllable(currentChar) {
+            // syllables with short vowel:
+            if (currentChar === CANADIAN_SYLLABICS_WE) {
+                return CANADIAN_SYLLABICS_WA;
+            } else if (currentChar === CANADIAN_SYLLABICS_WA) {
+                return CANADIAN_SYLLABICS_WI;
+            } else if (currentChar === CANADIAN_SYLLABICS_WI) {
+                return CANADIAN_SYLLABICS_WO;
+            } else if (currentChar === CANADIAN_SYLLABICS_WO) {
+                return CANADIAN_SYLLABICS_WE;
+            // syllables with long vowel:
+            } else if (currentChar === CANADIAN_SYLLABICS_WAA) {
+                return CANADIAN_SYLLABICS_WII;
+            } else if (currentChar === CANADIAN_SYLLABICS_WII) {
+                return CANADIAN_SYLLABICS_WOO;
+            } else if (currentChar === CANADIAN_SYLLABICS_WOO) {
+                return CANADIAN_SYLLABICS_WAA;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+        function lengthenWEastSyllable(currentChar) {
+            if (currentChar === CANADIAN_SYLLABICS_WE) {
+                return CANADIAN_SYLLABICS_WE;
+            } else if (currentChar === CANADIAN_SYLLABICS_WA) {
+                return CANADIAN_SYLLABICS_WAA;
+            } else if (currentChar === CANADIAN_SYLLABICS_WI) {
+                return CANADIAN_SYLLABICS_WII;
+            } else if (currentChar === CANADIAN_SYLLABICS_WO) {
+                return CANADIAN_SYLLABICS_WOO;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
         function isPSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_PE
               || currentChar === CANADIAN_SYLLABICS_PI
