@@ -52,7 +52,9 @@
     <textarea id="textOutput" name="textOutput" lang="cr" dir="ltr" rows="3" style="width:90%"> </textarea>
 
     <button id="rotateRightButton" class="complexAction">Rotate Last Character Rightward ↻</button>
-    <button id="lengthenVowelButton" class="complexAction">Lengthen Vowel of Last Character</button>
+    <button id="lengthenVowelButton" class="complexAction">(a -> aa) Lengthen Vowel of Last Character</button>
+    <button id="roundInWestCreeWayButton" class="complexAction"> (+w) Round Onset of Syllable in West Cree way</button>
+    <button id="roundInEastCreeWayButton" class="complexAction"> (+w) Round Onset of Syllable in East Cree way</button>
 
     <div id="keyboardArea">
 
@@ -1280,7 +1282,7 @@
             if (textOutputInitialValue) {
                 let valueLength = textOutputInitialValue.length;
                 if (valueLength < 1) {
-                    return; // There is no character to rotate. Nothing to do here.
+                    return; // There is no character to lengthen. Nothing to do here.
                 }
                 let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
                 if (isNonConsonantInitialSyllable(lastChar)) {
@@ -1362,22 +1364,65 @@
             if (textOutputInitialValue) {
                 let valueLength = textOutputInitialValue.length;
                 if (valueLength < 1) {
-                    return; // There is no character to rotate. Nothing to do here.
+                    return; // There is no character to round in the West Cree way. Nothing to do here.
                 }
                 let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
                 if (isPSyllable(lastChar)) {
-                    let lengthenedChar = lengthenPSyllable(lastChar);
-                    if (lengthenedChar) {
-                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + lengthenedChar;
+                    let resultChar = insertWestCreeWDiacriticPSyllable(lastChar);
+                    if (resultChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + resultChar;
                     }
                 }
                 else {
-                    console.log("cannot lengthen the last character");
+                    console.log("cannot round the last character in the West Cree way");
+                }
+            }
+        }
+
+        let addRoundingToFirstConsonantSoundInEastCreeWayOfLastCharacterInTextField = (event) => {
+            let textOutput = document.getElementById("textOutput");
+            let textOutputInitialValue = textOutput.value;
+            if (textOutputInitialValue) {
+                let valueLength = textOutputInitialValue.length;
+                if (valueLength < 1) {
+                    return; // There is no character to round in the East Cree way. Nothing to do here.
+                }
+                let lastChar = textOutputInitialValue.substring(valueLength - 1, valueLength);
+                if (isPSyllable(lastChar)) {
+                    let resultChar = insertEastCreeWDiacriticPSyllable(lastChar);
+                    if (resultChar) {
+                        textOutput.value = textOutput.value.substring(0, valueLength - 1) + resultChar;
+                    }
+                }
+                else {
+                    console.log("cannot round the last character in the East Cree way");
                 }
             }
         }
 
 
+        let rotateRightFunction = rotateRightLastCharacterInTextField;
+        let rotateRightButton = document.getElementById("rotateRightButton");
+        rotateRightButton.addEventListener("click", rotateRightFunction);
+        
+        let lengthenVowelFunction = lengthenVowelOfLastCharacterInTextField;
+        let lengthenVowelButton = document.getElementById("lengthenVowelButton");
+        lengthenVowelButton.addEventListener("click", lengthenVowelFunction);
+
+        let roundInWestCreeWayButton = document.getElementById("roundInWestCreeWayButton");
+        roundInWestCreeWayButton.addEventListener("click", addRoundingToFirstConsonantSoundInWestCreeWayOfLastCharacterInTextField);
+
+        let roundInEastCreeWayButton = document.getElementById("roundInEastCreeWayButton");
+        roundInEastCreeWayButton.addEventListener("click", addRoundingToFirstConsonantSoundInEastCreeWayOfLastCharacterInTextField);
+
+
+		// No User Interface or DOM manipulation code beyond this point.
+		// After this line, only "Domain logic". That is code that does not
+		// refer to any text fields, buttons, or other user interface elements.
+		// Code beyond this point should only manipulate strings, numbers and symbols.
+		
+		// It is hoped in the future, these will be pure functions (no console.log calls). But for the sake
+		// of development, we are using console.log, and other output methods.
         function isNonConsonantInitialSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_E
               || currentChar === CANADIAN_SYLLABICS_I
@@ -1422,6 +1467,42 @@
             }
         }
 
+        function insertWestCreeWDiacriticNonConsonantInitialSyllable(character) {
+            if (character === CANADIAN_SYLLABICS_E) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WE;
+            } else if (character === CANADIAN_SYLLABICS_I) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WI;
+            } else if (character === CANADIAN_SYLLABICS_II) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WII;
+            } else if (character === CANADIAN_SYLLABICS_O) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WO;
+            } else if (character === CANADIAN_SYLLABICS_OO) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WOO;
+            } else if (character === CANADIAN_SYLLABICS_A) {
+                return CANADIAN_SYLLABICS_WEST_CREE_WA;
+            }
+        }
+
+        function insertEastCreeWDiacriticNonConsonantInitialSyllable(character) {
+            if (character === CANADIAN_SYLLABICS_E) {
+                return CANADIAN_SYLLABICS_WE;
+            } else if (character === CANADIAN_SYLLABICS_I) {
+                return CANADIAN_SYLLABICS_WI;
+            } else if (character === CANADIAN_SYLLABICS_II) {
+                return CANADIAN_SYLLABICS_WII;
+            } else if (character === CANADIAN_SYLLABICS_O) {
+                return CANADIAN_SYLLABICS_WO;
+            } else if (character === CANADIAN_SYLLABICS_OO) {
+                return CANADIAN_SYLLABICS_WOO;
+            } else if (character === CANADIAN_SYLLABICS_A) {
+                return CANADIAN_SYLLABICS_WA;
+            } else if (character === CANADIAN_SYLLABICS_AA) {
+                return CANADIAN_SYLLABICS_WAA;
+            }
+        }
+
+
+
 
         function isWWestSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE
@@ -1465,6 +1546,27 @@
                 return CANADIAN_SYLLABICS_WEST_CREE_WII;
             } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WO) {
                 return CANADIAN_SYLLABICS_WEST_CREE_WOO;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+        function removeWDiacriticWWestSyllable(character) {
+            if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WE) {
+                return CANADIAN_SYLLABICS_E;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WA) {
+                return CANADIAN_SYLLABICS_A;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WI) {
+                return CANADIAN_SYLLABICS_I;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WO) {
+                return CANADIAN_SYLLABICS_O;
+            // syllables with long vowel:
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WAA) {
+                return CANADIAN_SYLLABICS_AA;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WII) {
+                return CANADIAN_SYLLABICS_II;
+            } else if (currentChar === CANADIAN_SYLLABICS_WEST_CREE_WOO) {
+                return CANADIAN_SYLLABICS_OO;
             } else {
                 console.log("not a recognized character for this function");
             }
@@ -1518,6 +1620,28 @@
             }
         }
 
+        function removeWDiacriticWEastSyllable(character) {
+            if (currentChar === CANADIAN_SYLLABICS_WE) {
+                return CANADIAN_SYLLABICS_E;
+            } else if (currentChar === CANADIAN_SYLLABICS_WA) {
+                return CANADIAN_SYLLABICS_A;
+            } else if (currentChar === CANADIAN_SYLLABICS_WI) {
+                return CANADIAN_SYLLABICS_I;
+            } else if (currentChar === CANADIAN_SYLLABICS_WO) {
+                return CANADIAN_SYLLABICS_O;
+            // syllables with long vowel:
+            } else if (currentChar === CANADIAN_SYLLABICS_WAA) {
+                return CANADIAN_SYLLABICS_AA;
+            } else if (currentChar === CANADIAN_SYLLABICS_WII) {
+                return CANADIAN_SYLLABICS_II;
+            } else if (currentChar === CANADIAN_SYLLABICS_WOO) {
+                return CANADIAN_SYLLABICS_OO;
+            } else {
+                console.log("not a recognized character for this function");
+            }
+        }
+
+
         function isPSyllable(currentChar) {
             return currentChar === CANADIAN_SYLLABICS_PE
               || currentChar === CANADIAN_SYLLABICS_PI
@@ -1526,7 +1650,21 @@
               || currentChar === CANADIAN_SYLLABICS_PII
               || currentChar === CANADIAN_SYLLABICS_POO
               || currentChar === CANADIAN_SYLLABICS_PAA
-              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_P;
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_P
+              || currentChar === CANADIAN_SYLLABICS_P
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_PWE
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_PWI
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_PWII
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_PWO
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_PWOO
+              || currentChar === CANADIAN_SYLLABICS_WEST_CREE_PWA
+              || currentChar === CANADIAN_SYLLABICS_PWE
+              || currentChar === CANADIAN_SYLLABICS_PWI
+              || currentChar === CANADIAN_SYLLABICS_PWII
+              || currentChar === CANADIAN_SYLLABICS_PWO
+              || currentChar === CANADIAN_SYLLABICS_PWOO
+              || currentChar === CANADIAN_SYLLABICS_PWA
+              || currentChar === CANADIAN_SYLLABICS_PWAA;
         }
 
         function rotateRightPSyllable(currentChar) {
@@ -1568,35 +1706,35 @@
 
 
         function insertWestCreeWDiacriticPSyllable(character) {
-            if (character === CANADIAN_SYLLABICS_PE) {
+            if (character === CANADIAN_SYLLABICS_PE || character === CANADIAN_SYLLABICS_PWE) {
                 return CANADIAN_SYLLABICS_WEST_CREE_PWE;
-            } else if (character === CANADIAN_SYLLABICS_PI) {
+            } else if (character === CANADIAN_SYLLABICS_PI || character === CANADIAN_SYLLABICS_PWI) {
                 return CANADIAN_SYLLABICS_WEST_CREE_PWI;
-            } else if (character === CANADIAN_SYLLABICS_PII) {
+            } else if (character === CANADIAN_SYLLABICS_PII || character === CANADIAN_SYLLABICS_PWII) {
                 return CANADIAN_SYLLABICS_WEST_CREE_PWII;
-            } else if (character === CANADIAN_SYLLABICS_PO) {
+            } else if (character === CANADIAN_SYLLABICS_PO || character === CANADIAN_SYLLABICS_PWO) {
                 return CANADIAN_SYLLABICS_WEST_CREE_PWO;
-            } else if (character === CANADIAN_SYLLABICS_POO) {
+            } else if (character === CANADIAN_SYLLABICS_POO || character === CANADIAN_SYLLABICS_PWOO) {
                 return CANADIAN_SYLLABICS_WEST_CREE_PWOO;
-            } else if (character === CANADIAN_SYLLABICS_PA) {
+            } else if (character === CANADIAN_SYLLABICS_PA || character === CANADIAN_SYLLABICS_PWAA) {
                 return CANADIAN_SYLLABICS_WEST_CREE_PWA;
             }
         }
 
         function insertEastCreeWDiacriticPSyllable(character) {
-            if (character === CANADIAN_SYLLABICS_PE) {
+            if (character === CANADIAN_SYLLABICS_PE || character === CANADIAN_SYLLABICS_WEST_CREE_PWE) {
                 return CANADIAN_SYLLABICS_PWE;
-            } else if (character === CANADIAN_SYLLABICS_PI) {
+            } else if (character === CANADIAN_SYLLABICS_PI || character === CANADIAN_SYLLABICS_WEST_CREE_PWI) {
                 return CANADIAN_SYLLABICS_PWI;
-            } else if (character === CANADIAN_SYLLABICS_PII) {
+            } else if (character === CANADIAN_SYLLABICS_PII || character === CANADIAN_SYLLABICS_WEST_CREE_PWII) {
                 return CANADIAN_SYLLABICS_PWII;
-            } else if (character === CANADIAN_SYLLABICS_PO) {
+            } else if (character === CANADIAN_SYLLABICS_PO || character === CANADIAN_SYLLABICS_WEST_CREE_PWO) {
                 return CANADIAN_SYLLABICS_PWO;
-            } else if (character === CANADIAN_SYLLABICS_POO) {
+            } else if (character === CANADIAN_SYLLABICS_POO || character === CANADIAN_SYLLABICS_WEST_CREE_PWOO) {
                 return CANADIAN_SYLLABICS_PWOO;
-            } else if (character === CANADIAN_SYLLABICS_PA) {
+            } else if (character === CANADIAN_SYLLABICS_PA || character === CANADIAN_SYLLABICS_WEST_CREE_PWA) {
                 return CANADIAN_SYLLABICS_PWA;
-            } else if (character === CANADIAN_SYLLABICS_PAA) {
+            } else if (character === CANADIAN_SYLLABICS_PAA || character === CANADIAN_SYLLABICS_WEST_CREE_PWAA) {
                 return CANADIAN_SYLLABICS_PWAA;
             }
         }
@@ -2057,15 +2195,6 @@
             }
         }
 
-
-
-        let rotateRightFunction = rotateRightLastCharacterInTextField;
-        let rotateRightButton = document.getElementById("rotateRightButton");
-        rotateRightButton.addEventListener("click", rotateRightFunction);
-        
-        let lengthenVowelFunction = lengthenVowelOfLastCharacterInTextField;
-        let lengthenVowelButton = document.getElementById("lengthenVowelButton");
-        lengthenVowelButton.addEventListener("click", lengthenVowelFunction);
         
         
         
